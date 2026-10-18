@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#15161a">
+<title>ঢাকা ট্রাফিক সারভাইভাল — Dhaka Traffic Survival</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="ঢাকা ট্রাফিক সারভাইভাল — Dhaka Traffic Survival">
+<meta property="og:description" content="ঢাকার রাস্তায় বাঁচলে তুই কিংবদন্তি! রিকশা চালা, বেল বাজা, বল — ওই মামা, সাইড দে!">
+<meta property="og:locale" content="bn_BD">
+<style>
+:root{--font:"Noto Sans Bengali","Hind Siliguri","Nirmala UI","Kalpurush","Siyam Rupali","Vrinda","Shonar Bangla",system-ui,"Segoe UI",sans-serif;--ink:#15161a;--panel:#1f2128;--paper:#fff6e0;--red:#e63946;--gold:#ffb703;--green:#0a8f5b;--pink:#ff4d8d;--sky:#2ec4f1;--u:3.6px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%;background:#0b0c10;overflow:hidden;overscroll-behavior:none}
+body{font-family:var(--font);color:var(--paper);display:flex;align-items:center;justify-content:center}
+#stage{position:relative;width:360px;height:640px;overflow:hidden;background:var(--ink);user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:none;box-shadow:0 0 0 1px #2c2f38,0 20px 60px rgba(0,0,0,.6)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+a{color:var(--gold)}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{display:block;width:100%;border:2px solid #000;border-radius:calc(var(--u)*3);background:var(--paper);color:var(--ink);font-weight:800;font-size:max(13px,calc(var(--u)*4));padding:calc(var(--u)*2.2) calc(var(--u)*3);box-shadow:0 calc(var(--u)*.9) 0 #000;transition:transform .08s,box-shadow .08s,filter .15s;margin:0 0 calc(var(--u)*2.2)}
+.btn:hover{filter:brightness(1.07)}
+.btn:active,.btn.down{transform:translateY(calc(var(--u)*.7));box-shadow:0 calc(var(--u)*.2) 0 #000}
+.btn:focus-visible,.ico:focus-visible,.ctl:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.btn.primary{background:var(--gold)}
+.btn.red{background:var(--red);color:#fff}
+.btn.green{background:#2bd48a}
+.btn.small{font-size:max(11px,calc(var(--u)*3.3));padding:calc(var(--u)*1.6) calc(var(--u)*1.5);margin:0}
+.btn.dark{background:#2b2e38;color:var(--paper)}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;z-index:10;overflow-y:auto;overflow-x:hidden;touch-action:pan-y;padding:calc(env(safe-area-inset-top,0px) + var(--u)*3) calc(var(--u)*4) calc(env(safe-area-inset-bottom,0px) + var(--u)*3)}
+#menu{background:linear-gradient(180deg,rgba(21,22,26,.94) 0,rgba(21,22,26,.55) 26%,rgba(21,22,26,0) 40%,rgba(21,22,26,0) 50%,rgba(21,22,26,.93) 66%)}
+.logo{text-align:center}
+.logo h1{margin:0;font-size:max(24px,calc(var(--u)*9));line-height:1.12;color:var(--gold);-webkit-text-stroke:calc(var(--u)*.45) #000;paint-order:stroke fill;text-shadow:0 calc(var(--u)*.8) 0 var(--red)}
+.logo .en{font-weight:800;letter-spacing:.06em;font-size:max(11px,calc(var(--u)*3.4));color:var(--paper);margin-top:calc(var(--u)*1)}
+.logo .tag{margin:calc(var(--u)*1.5) 0 0;font-size:max(12px,calc(var(--u)*3.6));color:var(--sky);font-weight:700}
+.spacer{flex:1 1 auto;min-height:calc(var(--u)*44)}
+.mb{flex:0 0 auto}
+.intro{margin:0 0 calc(var(--u)*1.5);text-align:center;font-weight:800;font-size:max(13px,calc(var(--u)*4));color:var(--gold)}
+.howto{margin:0 0 calc(var(--u)*2);text-align:center;font-size:max(11px,calc(var(--u)*3.2));line-height:1.45;color:#e8e2cf}
+.keys{margin:0 0 calc(var(--u)*2);text-align:center;font-size:max(10px,calc(var(--u)*2.8));color:#aab}
+.row{display:flex;gap:calc(var(--u)*2);align-items:stretch;margin-bottom:calc(var(--u)*2)}
+.row>*{flex:1}
+.best{display:flex;align-items:center;justify-content:center;font-weight:800;font-size:max(12px,calc(var(--u)*3.5));background:rgba(0,0,0,.4);border-radius:calc(var(--u)*2);padding:0 calc(var(--u)*1.5);text-align:center}
+.credit{margin:calc(var(--u)*1) 0 0;text-align:center;font-size:max(10px,calc(var(--u)*2.8));color:#c9c4b3}
+#credit{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + var(--u)*.6);text-align:center;font-size:max(9px,calc(var(--u)*2.5));color:#d7d2c0;z-index:6;pointer-events:none;text-shadow:0 1px 2px #000}
+#credit a{pointer-events:auto}
+#hud{position:absolute;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top,0px) + var(--u)*1.2) calc(var(--u)*2) 0;pointer-events:none;z-index:5}
+.hud-top{display:flex;justify-content:space-between;align-items:flex-start;gap:calc(var(--u)*1.5)}
+.chip{background:rgba(21,22,26,.8);border:2px solid #000;border-radius:calc(var(--u)*2);padding:calc(var(--u)*.7) calc(var(--u)*1.8);box-shadow:0 calc(var(--u)*.5) 0 rgba(0,0,0,.5)}
+.hs small{display:block;font-size:max(9px,calc(var(--u)*2.5));color:#bbb;line-height:1}
+.hs b{font-size:max(20px,calc(var(--u)*7));line-height:1.05;color:var(--gold)}
+.hm{font-size:max(10px,calc(var(--u)*2.9));line-height:1.35;font-weight:700;text-align:center}
+.hb{display:flex;gap:calc(var(--u)*1)}
+.ico{pointer-events:auto;width:calc(var(--u)*8.5);height:calc(var(--u)*8.5);min-width:30px;min-height:30px;border-radius:50%;border:2px solid #000;background:var(--paper);color:var(--ink);font-size:max(14px,calc(var(--u)*4));line-height:1;padding:0;box-shadow:0 calc(var(--u)*.5) 0 #000}
+.ico.off{background:#888;opacity:.8}
+.hud2{display:flex;gap:calc(var(--u)*1.5);margin-top:calc(var(--u)*1.2);font-size:max(10px,calc(var(--u)*3));font-weight:800}
+.hud2 span{background:rgba(21,22,26,.78);border-radius:calc(var(--u)*2);padding:calc(var(--u)*.4) calc(var(--u)*1.6)}
+#status{display:inline-block;max-width:100%;margin-top:calc(var(--u)*1.2);background:var(--paper);color:var(--ink);border:2px solid #000;border-radius:calc(var(--u)*2.5);padding:calc(var(--u)*.9) calc(var(--u)*2.4);font-size:max(11px,calc(var(--u)*3.3));font-weight:800;opacity:0;transform:translateY(-4px);transition:opacity .2s,transform .2s}
+#status.on{opacity:1;transform:none}
+#toast{position:absolute;left:calc(var(--u)*3);right:calc(var(--u)*3);top:calc(var(--u)*30);z-index:20;pointer-events:none;background:var(--gold);color:var(--ink);border:2px solid #000;border-radius:calc(var(--u)*3);padding:calc(var(--u)*1.8) calc(var(--u)*3);font-weight:800;font-size:max(12px,calc(var(--u)*3.4));text-align:center;box-shadow:0 calc(var(--u)*.9) 0 #000;opacity:0;transform:scale(.85);transition:opacity .2s,transform .2s}
+#toast.show{opacity:1;transform:scale(1)}
+#toast small{display:block;font-weight:600;font-size:.85em}
+#controls{position:absolute;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + var(--u)*4.4);display:flex;gap:calc(var(--u)*2);padding:0 calc(var(--u)*2);z-index:6}
+.ctl{touch-action:none;height:calc(var(--u)*19);border-radius:calc(var(--u)*4);border:2px solid #000;background:rgba(255,246,224,.82);color:var(--ink);font-weight:900;font-size:max(22px,calc(var(--u)*8));box-shadow:0 calc(var(--u)*1) 0 #000;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;padding:0;transition:transform .06s}
+.ctl small{font-size:max(10px,calc(var(--u)*2.8));font-weight:700}
+.ctl.side{flex:0 0 28%}
+.ctl.bell{flex:1;background:var(--red);color:#fff;font-size:max(15px,calc(var(--u)*5));}
+.ctl.down{transform:translateY(calc(var(--u)*.8));box-shadow:0 calc(var(--u)*.2) 0 #000;filter:brightness(1.1)}
+#pauseScreen,#overScreen,#statsScreen{background:rgba(12,13,17,.9)}
+#pauseScreen{justify-content:center}
+.card{width:100%}
+h2{margin:0 0 calc(var(--u)*2);text-align:center;font-size:max(18px,calc(var(--u)*6.4));line-height:1.2;color:var(--gold)}
+#oPunch{font-size:max(17px,calc(var(--u)*5.6));color:var(--paper)}
+.newrec{margin:0 auto calc(var(--u)*2);width:max-content;max-width:100%;background:var(--gold);color:var(--ink);border:2px solid #000;border-radius:calc(var(--u)*3);padding:calc(var(--u)*.8) calc(var(--u)*3);font-weight:900;font-size:max(13px,calc(var(--u)*4));animation:pop .6s ease-out}
+@keyframes pop{0%{transform:scale(.4)}70%{transform:scale(1.12)}100%{transform:scale(1)}}
+.rank{text-align:center;font-weight:800;color:var(--sky);font-size:max(13px,calc(var(--u)*4));margin-bottom:calc(var(--u)*1)}
+.bigscore{text-align:center;margin-bottom:calc(var(--u)*2)}
+.bigscore span{display:block;font-size:max(11px,calc(var(--u)*3));color:#bbb}
+.bigscore b{font-size:max(36px,calc(var(--u)*15));line-height:1;color:var(--gold);-webkit-text-stroke:calc(var(--u)*.3) #000;paint-order:stroke fill}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*1.5);margin-bottom:calc(var(--u)*2)}
+.grid3 div{background:#2b2e38;border-radius:calc(var(--u)*2);padding:calc(var(--u)*1.4) calc(var(--u)*.6);text-align:center;font-size:max(10px,calc(var(--u)*2.8));color:#bbb}
+.grid3 b{display:block;font-size:max(14px,calc(var(--u)*4.6));color:var(--paper)}
+.prev{text-align:center;font-size:max(11px,calc(var(--u)*3));color:#bbb;margin-bottom:calc(var(--u)*2.4)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.6);margin-bottom:calc(var(--u)*2)}
+.msg{min-height:calc(var(--u)*4);margin:0 0 calc(var(--u)*2);padding:0 calc(var(--u)*1);text-align:center;font-size:max(11px,calc(var(--u)*3.1));line-height:1.45;color:#ffe08a;font-weight:700}
+#manualCopy{width:100%;height:calc(var(--u)*24);margin-bottom:calc(var(--u)*2);background:#fff;color:#000;border-radius:8px;font:inherit;font-size:13px;padding:8px}
+.stat-list{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*1.5);margin-bottom:calc(var(--u)*3);font-size:max(11px,calc(var(--u)*3.1))}
+.stat-list div{background:#2b2e38;border-radius:calc(var(--u)*2);padding:calc(var(--u)*1.4);text-align:center}
+.stat-list b{display:block;font-size:max(15px,calc(var(--u)*4.6));color:var(--gold)}
+.ach{display:flex;gap:calc(var(--u)*2);align-items:center;background:#2b2e38;border-radius:calc(var(--u)*2.4);padding:calc(var(--u)*1.6);margin-bottom:calc(var(--u)*1.4);font-size:max(11px,calc(var(--u)*3.1))}
+.ach.locked{opacity:.45;filter:grayscale(1)}
+.ach i{font-style:normal;font-size:max(18px,calc(var(--u)*6))}
+.ach b{display:block;color:var(--gold)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<noscript>এই গেম খেলতে JavaScript চালু করতে হবে।</noscript>
+<div id="stage">
+<canvas id="cv" aria-label="গেমের রাস্তা"></canvas>
+
+<div id="hud" hidden>
+  <div class="hud-top">
+    <div class="chip hs"><small>স্কোর</small><b id="hScore">০</b></div>
+    <div class="chip hm"><span id="hBest">সেরা: ০</span><br><span id="hDist">০ মি</span> · <span id="hTime">০:০০</span></div>
+    <div class="hb">
+      <button class="ico js-snd" id="btnSndHud" aria-label="সাউন্ড চালু/বন্ধ">🔊</button>
+      <button class="ico js-mus" id="btnMusHud" aria-label="মিউজিক চালু/বন্ধ">🎵</button>
+      <button class="ico" id="btnPause" aria-label="বিরতি">⏸</button>
+    </div>
+  </div>
+  <div class="hud2"><span id="hNear">নিয়ার-মিস: ০</span><span id="hCombo" hidden>🔥 কম্বো ×২</span><span id="hMult" hidden>✨ ×২</span></div>
+  <div id="status" role="status" aria-live="polite"></div>
+</div>
+
+<div id="controls" hidden>
+  <button class="ctl side" id="btnLeft" aria-label="বামে">◀<small>বামে</small></button>
+  <button class="ctl bell" id="btnBell" tabindex="-1">🔔 বেল বাজা</button>
+  <button class="ctl side" id="btnRight" aria-label="ডানে">▶<small>ডানে</small></button>
+</div>
+<div id="credit" hidden>Developed with chaos by Mizanur Munna · <a href="https://www.facebook.com/share/18XADQ6t6C/" target="_self" rel="noopener noreferrer">Facebook</a></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<section id="menu" class="screen">
+  <div class="logo">
+    <h1>ঢাকা ট্রাফিক সারভাইভাল</h1>
+    <div class="en">DHAKA TRAFFIC SURVIVAL 🇧🇩</div>
+    <p class="tag">“ঢাকার রাস্তায় বাঁচলে তুই কিংবদন্তি!”</p>
+  </div>
+  <div class="spacer"></div>
+  <div class="mb">
+    <p class="intro">ঢাকার রাস্তায় তোর সাহসের পরীক্ষা!</p>
+    <button class="btn primary" id="btnStart">▶ খেলা শুরু কর</button>
+    <p class="howto">বামে-ডানে চালা, গাড়ি এড়া, আর বেল বাজিয়ে বল — ওই মামা, সাইড দে!</p>
+    <p class="keys">কিবোর্ড: ← → বা A D · বেল: Space (দুইবার চাপলে ডাবল!) · বিরতি: P / Esc · শুরু: Enter</p>
+    <div class="row">
+      <div class="best" id="mBest">সেরা স্কোর: ০</div>
+      <button class="btn small dark js-snd" id="btnSndMenu">🔊 সাউন্ড</button>
+      <button class="btn small dark js-mus" id="btnMusMenu">🎵 মিউজিক</button>
+    </div>
+    <button class="btn dark" id="btnStats">🏅 অর্জন ও পরিসংখ্যান</button>
+    <p class="credit">Developed with chaos by Mizanur Munna · <a href="https://www.facebook.com/share/18XADQ6t6C/" target="_self" rel="noopener noreferrer">Facebook</a></p>
+  </div>
+</section>
+
+<section id="pauseScreen" class="screen" hidden>
+  <div class="card">
+    <h2>⏸ বিরতি</h2>
+    <button class="btn primary" id="btnResume">▶ চালিয়ে যা</button>
+    <button class="btn" id="btnRestartP">🔁 নতুন করে শুরু</button>
+    <div class="grid2">
+      <button class="btn small dark js-snd" id="btnSndPause">🔊 সাউন্ড</button>
+      <button class="btn small dark js-mus" id="btnMusPause">🎵 মিউজিক</button>
+    </div>
+    <button class="btn dark" id="btnHomeP">🏠 মেনুতে যা</button>
+  </div>
+</section>
+
+<section id="overScreen" class="screen" hidden>
+  <div class="card">
+    <div class="newrec" id="oBadge" hidden>🏆 নতুন রেকর্ড!</div>
+    <h2 id="oPunch"></h2>
+    <div class="rank" id="oRank"></div>
+    <div class="bigscore"><span>চূড়ান্ত স্কোর</span><b id="oScore">০</b></div>
+    <div class="grid3">
+      <div>দূরত্ব<b id="oDist">০</b></div>
+      <div>সময়<b id="oTime">০</b></div>
+      <div>নিয়ার-মিস<b id="oNear">০</b></div>
+    </div>
+    <div class="prev" id="oPrev"></div>
+    <button class="btn primary" id="btnAgain">🔁 আবার খেল</button>
+    <button class="btn green" id="btnPng">📸 আমার মিম কার্ড ডাউনলোড কর</button>
+    <div class="grid2">
+      <button class="btn small" id="btnFb">Facebook-এ শেয়ার কর</button>
+      <button class="btn small" id="btnChallenge">বন্ধুকে চ্যালেঞ্জ দে</button>
+      <button class="btn small" id="btnPng2">PNG ডাউনলোড কর</button>
+      <button class="btn small" id="btnCopy">স্কোর কপি কর</button>
+    </div>
+    <div class="msg" id="shareMsg" role="status" aria-live="polite"></div>
+    <textarea id="manualCopy" readonly hidden aria-label="কপি করার লেখা"></textarea>
+    <button class="btn dark" id="btnHomeO">🏠 মেনুতে যা</button>
+    <p class="credit">Developed with chaos by Mizanur Munna<br>Facebook: <a href="https://www.facebook.com/share/18XADQ6t6C/" target="_self" rel="noopener noreferrer">https://www.facebook.com/share/18XADQ6t6C/</a></p>
+  </div>
+</section>
+
+<section id="statsScreen" class="screen" hidden>
+  <div class="card">
+    <h2>🏅 অর্জন ও পরিসংখ্যান</h2>
+    <div class="stat-list" id="statList"></div>
+    <div id="achList"></div>
+    <button class="btn primary" id="btnStatsBack">← ফিরে যা</button>
+  </div>
+</section>
+</div>
+<script>
+
+// Android wrapper helper: the native Back button can request a pause while gameplay is active.
+window.__androidPause = function () {
+  try {
+    const pause = document.getElementById('btnPause');
+    if (pause && !pause.disabled) pause.click();
+  } catch (_) {}
+};
+\n// ====== কনফিগ: হোস্ট করার পর এখানে আপনার আসল পাবলিক URL বসান (যেমন "https://example.com/") ======
+const PUBLIC_GAME_URL = "";
+// ==================================================================================================
+(function () {
+'use strict';
+const DEV_NAME = 'Mizanur Munna';
+const DEV_URL = 'https://www.facebook.com/share/18XADQ6t6C/';
+const W = 360, H = 640, ROAD_L = 50, ROAD_R = 310, LANES = 4, LANE_W = (ROAD_R - ROAD_L) / LANES, PLAYER_Y = 430;
+const FONT = '"Noto Sans Bengali","Hind Siliguri","Nirmala UI","Kalpurush","Siyam Rupali","Vrinda","Shonar Bangla",system-ui,"Segoe UI",sans-serif';
+const laneX = l => ROAD_L + LANE_W * (l + 0.5);
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const lerp = (a, b, t) => a + (b - a) * t;
+const rand = (a, b) => a + Math.random() * (b - a);
+const randInt = (a, b) => Math.floor(rand(a, b + 1));
+const pick = a => a[Math.floor(Math.random() * a.length)];
+const BND = '০১২৩৪৫৬৭৮৯';
+const bn = v => String(v).replace(/\d/g, d => BND[d]);
+const fmtTime = s => { s = Math.floor(s); return bn(Math.floor(s / 60)) + ':' + bn(String(s % 60).padStart(2, '0')); };
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+function rr(c, x, y, w, h, r) { r = Math.min(r, w / 2, h / 2); c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+const reduced = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+// ====== সেভ / লোকাল স্টোরেজ ======
+const STORE_KEY = 'dhaka_traffic_survival_v1';
+function defaultSave() { return { best: 0, bestDist: 0, runs: 0, totalNear: 0, totalBells: 0, totalAvoided: 0, totalTime: 0, ach: {}, sound: true, music: true }; }
+let save = defaultSave();
+let storageOk = true;
+function loadSave() {
+  try {
+    const raw = window.localStorage.getItem(STORE_KEY);
+    if (raw) {
+      const d = JSON.parse(raw);
+      if (d && typeof d === 'object') {
+        const base = defaultSave();
+        for (const k of Object.keys(base)) {
+          if (k === 'ach') { if (d.ach && typeof d.ach === 'object') base.ach = d.ach; }
+          else if (typeof d[k] === typeof base[k]) base[k] = d[k];
+        }
+        save = base;
+      }
+    }
+  } catch (e) { storageOk = false; }
+}
+function persist() { try { window.localStorage.setItem(STORE_KEY, JSON.stringify(save)); } catch (e) { storageOk = false; } }
+
+// ====== অডিও (Web Audio, সব সিন্থেসাইজড) ======
+const SFX = {
+  ctx: null, sfxBus: null, musicBus: null, noiseBuf: null, last: {}, musicOn: false, musicTimer: 0, nextT: 0, step: 0,
+  init() {
+    try {
+      if (!this.ctx) {
+        const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return false;
+        const c = new AC(); this.ctx = c;
+        const comp = c.createDynamicsCompressor(); comp.threshold.value = -18; comp.ratio.value = 6;
+        const master = c.createGain(); master.gain.value = 0.8; master.connect(comp); comp.connect(c.destination);
+        this.sfxBus = c.createGain(); this.sfxBus.connect(master);
+        this.musicBus = c.createGain(); this.musicBus.connect(master);
+        const len = Math.floor(c.sampleRate * 0.6); const b = c.createBuffer(1, len, c.sampleRate); const d = b.getChannelData(0);
+        for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+        this.noiseBuf = b; this.apply();
+      }
+      if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
+      return true;
+    } catch (e) { this.ctx = null; return false; }
+  },
+  apply() { if (!this.ctx) return; const t = this.ctx.currentTime; this.sfxBus.gain.setTargetAtTime(save.sound ? 1 : 0, t, 0.02); this.musicBus.gain.setTargetAtTime(save.sound && save.music ? 0.3 : 0, t, 0.05); },
+  on() { return !!this.ctx && save.sound; },
+  gate(k, ms) { const n = performance.now(); if (n - (this.last[k] || 0) < ms) return false; this.last[k] = n; return true; },
+  tone(o) {
+    const c = this.ctx, at = o.at !== undefined ? o.at : c.currentTime;
+    const osc = c.createOscillator(), g = c.createGain(); osc.type = o.type || 'sine';
+    osc.frequency.setValueAtTime(o.f, at);
+    if (o.f2) osc.frequency.exponentialRampToValueAtTime(Math.max(20, o.f2), at + o.dur);
+    g.gain.setValueAtTime(0.0001, at); g.gain.exponentialRampToValueAtTime(o.vol || 0.15, at + (o.atk || 0.006)); g.gain.exponentialRampToValueAtTime(0.0001, at + o.dur);
+    if (o.lp) { const f = c.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = o.lp; osc.connect(f); f.connect(g); } else osc.connect(g);
+    g.connect(o.bus || this.sfxBus); osc.start(at); osc.stop(at + o.dur + 0.05);
+  },
+  noise(o) {
+    const c = this.ctx, at = o.at !== undefined ? o.at : c.currentTime;
+    const src = c.createBufferSource(); src.buffer = this.noiseBuf;
+    const f = c.createBiquadFilter(); f.type = o.ft || 'lowpass'; f.frequency.setValueAtTime(o.f, at);
+    if (o.f2) f.frequency.exponentialRampToValueAtTime(Math.max(30, o.f2), at + o.dur);
+    f.Q.value = o.q || 0.8;
+    const g = c.createGain(); g.gain.setValueAtTime(o.vol || 0.3, at); g.gain.exponentialRampToValueAtTime(0.0001, at + Math.min(o.dur, 0.55));
+    src.connect(f); f.connect(g); g.connect(o.bus || this.sfxBus); src.start(at); src.stop(at + Math.min(o.dur, 0.55) + 0.05);
+  },
+  voice(at, f0, f1, dur, fa, fb, vol) {
+    const c = this.ctx, o = c.createOscillator(); o.type = 'sawtooth';
+    o.frequency.setValueAtTime(f0, at); o.frequency.linearRampToValueAtTime(f1, at + dur);
+    const g = c.createGain(); g.gain.setValueAtTime(0.0001, at); g.gain.linearRampToValueAtTime(vol, at + 0.02);
+    g.gain.setValueAtTime(vol, at + Math.max(0.03, dur - 0.04)); g.gain.linearRampToValueAtTime(0.0001, at + dur);
+    [fa, fb].forEach((fr, i) => { const bp = c.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = fr; bp.Q.value = 5; const gg = c.createGain(); gg.gain.value = i ? 0.6 : 1; o.connect(bp); bp.connect(gg); gg.connect(g); });
+    g.connect(this.sfxBus); o.start(at); o.stop(at + dur + 0.05);
+  },
+  safe(fn) { try { if (this.on()) fn.call(this, this.ctx.currentTime); } catch (e) { /* অডিও ব্যর্থ হলেও গেম চলবে */ } },
+  bell(vol) {
+    if (!this.gate('bell', 90)) return;
+    this.safe(function (t) {
+      const v = vol || 1;
+      this.tone({ f: 2200, dur: 0.9, vol: 0.13 * v }); this.tone({ f: 2218, dur: 0.8, vol: 0.1 * v });
+      this.tone({ f: 3350, dur: 0.5, vol: 0.07 * v }); this.tone({ f: 5100, dur: 0.25, vol: 0.04 * v });
+      this.noise({ ft: 'highpass', f: 5000, dur: 0.03, vol: 0.05 * v });
+    });
+  },
+  doubleBell() {
+    if (!this.gate('dbl', 600)) return;
+    this.safe(function (t) {
+      this.tone({ f: 2200, dur: 0.7, vol: 0.12 }); this.tone({ f: 2218, dur: 0.6, vol: 0.09 });
+      this.tone({ f: 1760, at: t + 0.14, dur: 0.6, vol: 0.1 });
+      const s = t + 0.3, k = 1.35;
+      this.voice(s, 190 * k, 240 * k, 0.15, 500, 900, 0.5);
+      this.voice(s + 0.17, 230 * k, 200 * k, 0.16, 800, 1250, 0.5);
+      this.voice(s + 0.35, 200 * k, 170 * k, 0.2, 800, 1250, 0.5);
+      this.voice(s + 0.65, 215 * k, 180 * k, 0.2, 800, 1100, 0.5);
+      this.voice(s + 0.88, 170 * k, 150 * k, 0.07, 300, 900, 0.4);
+      this.voice(s + 0.97, 230 * k, 150 * k, 0.26, 450, 2000, 0.5);
+    });
+  },
+  crash() { this.safe(function (t) {
+    this.noise({ f: 1800, f2: 160, dur: 0.5, vol: 0.55 }); this.tone({ f: 150, f2: 40, dur: 0.35, vol: 0.4 });
+    this.tone({ f: 640, f2: 180, type: 'triangle', dur: 0.3, vol: 0.18 });
+  }); },
+  fail() { this.safe(function (t) {
+    [[392, 0], [370, 0.36], [349, 0.72]].forEach(a => this.tone({ f: a[0], f2: a[0] * 0.96, at: t + 0.5 + a[1], dur: 0.34, vol: 0.12, type: 'sawtooth', lp: 900 }));
+    this.tone({ f: 330, f2: 150, at: t + 1.6, dur: 0.8, vol: 0.13, type: 'sawtooth', lp: 700 });
+  }); },
+  nearMiss() { if (!this.gate('near', 250)) return; this.safe(function () { this.tone({ f: 320, f2: 950, type: 'sawtooth', dur: 0.18, vol: 0.06, lp: 2500 }); this.noise({ ft: 'highpass', f: 3000, dur: 0.06, vol: 0.08 }); }); },
+  achievement() { this.safe(function (t) { [660, 880, 1175].forEach((f, i) => this.tone({ f, at: t + i * 0.09, dur: 0.16, vol: 0.1, type: 'triangle' })); }); },
+  coin() { this.safe(function (t) { this.tone({ f: 988, at: t, dur: 0.1, vol: 0.09, type: 'square', lp: 3000 }); this.tone({ f: 1319, at: t + 0.08, dur: 0.22, vol: 0.09, type: 'square', lp: 3000 }); }); },
+  thud() { if (!this.gate('thud', 300)) return; this.safe(function () { this.tone({ f: 110, f2: 45, dur: 0.22, vol: 0.35 }); this.noise({ f: 500, dur: 0.12, vol: 0.2 }); }); },
+  fanfare() { this.safe(function (t) {
+    [523, 659, 784, 1047, 1319].forEach((f, i) => this.tone({ f, at: t + i * 0.11, dur: 0.22, vol: 0.1, type: 'square', lp: 2600 }));
+    this.tone({ f: 1568, at: t + 0.6, dur: 0.7, vol: 0.1, type: 'triangle' }); this.tone({ f: 2200, at: t + 0.7, dur: 0.8, vol: 0.07 });
+  }); },
+  beat(step, t) {
+    if (!save.sound || !save.music) return;
+    const bus = this.musicBus;
+    if ([0, 7, 10].indexOf(step % 16) >= 0) this.tone({ f: 130, f2: 50, at: t, dur: 0.16, vol: 0.5, bus });
+    if ([4, 12].indexOf(step % 16) >= 0) this.noise({ ft: 'bandpass', f: 2600, dur: 0.07, vol: 0.28, at: t, bus, q: 2 });
+    if (step % 2 === 0) this.noise({ ft: 'highpass', f: 7000, dur: 0.03, vol: 0.12, at: t, bus });
+    const bass = [73.4, 0, 87.3, 0, 98, 0, 87.3, 110][step % 8]; if (bass) this.tone({ f: bass, at: t, dur: 0.2, vol: 0.28, type: 'triangle', bus });
+    if (step % 4 === 2) { const m = [587, 659, 784, 880, 784, 659, 587, 523][(step >> 2) % 8]; this.tone({ f: m, at: t, dur: 0.18, vol: 0.09, type: 'triangle', bus }); }
+  },
+  startMusic() {
+    if (!this.ctx || this.musicOn) return; this.musicOn = true; this.nextT = this.ctx.currentTime + 0.1; this.step = 0;
+    this.musicTimer = setInterval(() => { try { if (!this.musicOn) return; const c = this.ctx; while (this.nextT < c.currentTime + 0.2) { this.beat(this.step, this.nextT); this.nextT += 60 / 116 / 4; this.step = (this.step + 1) % 32; } } catch (e) { this.stopMusic(); } }, 50);
+  },
+  stopMusic() { this.musicOn = false; clearInterval(this.musicTimer); }
+};
+
+// ====== মিম লাইন লাইব্রেরি (১০০+) ======
+const LINES = {
+  traffic: ['ঢাকার রাস্তায় সবাই VIP!', 'সামনে বাস, পেছনে বাঁশ!', 'এইটা রাস্তা নাকি Final Boss?', 'ট্রাফিক দেখে মনটাই জ্যাম!', 'প্যাডেল মারো, স্বপ্ন বাঁচাও!', 'আমি রেস করছি না, বাঁচার চেষ্টা করছি!', 'রিকশার গতি, আমার আত্মবিশ্বাস!', 'ভাই, এভাবে চললে আমি NPC হয়ে যাব!', 'একটা গ্যাপ দেখছি, ওটাই আমার শেষ আশা!', 'জ্যামে আটকে আছি, জীবন চলছে!', 'বাসের হর্নে কান ঝালাপালা, মনটা খালাপালা!', 'রাস্তায় লেন নাই, আছে শুধু আবেগ!', 'জেব্রা ক্রসিং এখানে শুধু ডিজাইন!', 'সিগন্যাল সবুজ হলে ভাগ্য ভালো!', 'ফুটপাত কই? দোকানদার নিয়ে গেছে!', 'চা খাওয়ার সময় নাই, আগে বাঁচি!', 'মোড় ঘুরলেই নতুন চ্যালেঞ্জ!', 'অফিসে দেরি, রিকশায় মারামারি!', 'জ্যামের শহরে ধৈর্যই আসল মুদ্রা!', 'এই শহরে বাঁচতে হলে প্যাডেলে জোর লাগে!', 'যে বাঁচে সে-ই গল্প বলে!', 'ডানে যাব নাকি বামে? হায় আল্লাহ!', 'রাস্তার রাজা আমি, ট্রাফিক আমার প্রজা!', 'পেছনে সিএনজি, সামনে প্রশ্ন!', 'ঢাকার মোড়ে মোড়ে নাটক!', 'হর্ন বাজাই, ভাগ্য বদলায় না!', 'ওস্তাদ, গ্যাপটা দেখছেন তো?', 'ঢাকা শহর: ধৈর্যের আসল পরীক্ষা!', 'ভাই, ব্রেকটা কাজ করে তো?', 'আমার গন্তব্য এখনো বেঁচে আছে!'],
+  bell: ['টিং টিং! মামা, সাইড দেন!', 'টিং টিং! রিকশা আসছে, সরেন!', 'বেলের আওয়াজেই ভয় পায় ট্রাফিক!', 'মামা, বেল শুনেন, জীবনটা বুঝেন!', 'টিং! এইটা অনুরোধ, পরেরটা হুমকি!', 'বেল বাজাইলাম, সাহস বাড়াইলাম!', 'টিং টিং! আমার বেলই আমার ব্রেক!', 'বেলের সুর শুনে বাসও লজ্জা পায়!', 'টিং টিং, পথ ছাড়ো, পথিকবর!', 'এইটা সাধারণ বেল না, সাইডের দাবি!', 'টিং! শুনছেন, ওস্তাদ?', 'বেলটা পুরানা, কিন্তু তেজটা নতুন!'],
+  bellSpam: ['এত বেল বাজাইলে বেলেরও মাথা ঘুরে!', 'ভাই, বেল ক্লান্ত হয়ে গেছে!', 'বেল বাজালেই জায়গা মেলে না, মামা!', 'আরেকবার বাজালে বেল অভিযোগ করবে!'],
+  near: ['আরেকটু হলেই ইতিহাস!', 'উফ! চুলের ডগায় বেঁচে গেলাম!', 'ওস্তাদ, কী ড্রিফট দিলেন!', 'বুকের ভেতর ধুকপুক, তবু চালু!', 'এটা কি আমি দেখলাম, নাকি ভূত?', 'সরি মামা, সিনেমা বানাতে চাইলাম!', 'বাঁচলাম, বাসায় ফিরতে হবে তো!', 'একটুর জন্য বেঁচে গেছি, আল্লাহ ভরসা!', 'ম্যাট্রিক্সের নিও এবার রিকশায়!', 'এক ইঞ্চির জন্য ইনস্যুরেন্স বেঁচে গেল!', 'চোখ বন্ধ করেও বাঁচা যায়, প্রমাণিত!', 'নায়কেরা স্লো-মোশনে বাঁচে!', 'সাহস থাকলে এভাবেই কাটাতে হয়!', 'ঢাকা শেখায়: ফাঁক পেলেই ঢোক!', 'ধন্যবাদ মামা, নিজেও বাঁচলেন, আমিও!', 'ওরে বাবা, গায়ের লোম খাড়া!'],
+  overGeneric: ['ভাই, রিকশা থামছে, স্বপ্নও থামছে!', 'ঢাকার রাস্তা আবারও জিতে গেল!', 'আজকের মতো প্যাডেল শেষ!', 'বাড়িতে বলিস, চেষ্টা করেছিলি!', 'এটা হার না, রাস্তার সাথে অভিজ্ঞতা!', 'মামা, বেল বাজানোর আগে ব্রেক শিখ!', 'তুই হারিস নাই, ট্রাফিক তোকে দত্তক নিয়েছে!', 'রিকশা গেল, কিন্তু আত্মসম্মান কোথায়?', 'স্কোর কম, সাহস বেশি!', 'আরেকবার খেল, এবার রাস্তা চিনে নে!', 'ট্রাফিক পুলিশ বলল: এই তো আমার মামলা!', 'রাস্তা বলল: আজ আমার পালা!', 'ধাক্কাটা ছিল ফ্রি, কিন্তু ব্যথাটা প্রিমিয়াম!', 'দেরি করে ফেললি, এবার জ্যামও হাসছে!', 'বিরিয়ানি আর হইল না, ধাক্কাই জুটল!', 'প্যাডেলে দম ছিল, ভাগ্যে ছিল না!', 'ধাক্কা খেলেও মুখে হাসি, এটাই ঢাকাইয়া!', 'আহা রে রিকশা, কার জন্য এত তেজ?', 'পরের বার ঠিকই পার হবি, মামা!', 'এই ধাক্কাতেই তোর অভিজ্ঞতা বাড়ল!'],
+  overType: {
+    bus: ['বাসের সাথে প্রেম করতে গিয়ে ব্রেকআপ!', 'বাস বলল: আমি আসছি, তুই সরিস নাই!', 'বাসের সামনে বীরত্ব? আগে ইনস্যুরেন্স!'],
+    car: ['প্রাইভেট কারের সাথে রিকশার প্রেম টিকল না!', 'গাড়ির গায়ে দাগ, তোর গায়ে সাহস!'],
+    moto: ['মোটরসাইকেল ঢুকল ফাঁকে, তুই পড়লি পাকে!', 'বাইকওয়ালা ভাইয়া বলল: সরি, তাড়া ছিল!'],
+    rickshaw: ['রিকশায় রিকশায় ঠোকাঠুকি, মামারাই মামাকে ধরল!', 'দুই রিকশা, এক রাস্তা, বিশাল ড্রামা!'],
+    cng: ['সিএনজির খাঁচায় আটকে গেলি!', 'সিএনজি বলল: মিটারে যাব না, তোর ওপর দিয়েই যাব!'],
+    delivery: ['ডেলিভারি ভ্যান বলল: ফ্রি ডেলিভারি, ধাক্কা সহ!', 'মাল নামার আগেই তুই নামলি!'],
+    cart: ['ঠেলাগাড়ির সাথে ঠেলাঠেলি, জিতল ঠেলা!', 'কলার ঠেলা, পা পিছলা, গেম শেষ!'],
+    barrier: ['রাস্তায় কাজ চলছে, তোর স্বপ্নে বাঁধা!', 'কোন ডাইভারশন? আমি তো সোজা গেলাম!']
+  },
+  overLow: ['এত তাড়াতাড়ি? রাস্তা তো এখনো গরমই হয় নাই!', 'ওয়ার্ম-আপে শেষ! আবার চেষ্টা কর!', 'প্রথম মোড়েই ধরা খেলি, ঢাকা হাসছে!'],
+  highScore: ['বাঁচলে কিংবদন্তি, ধরা খেলে মিম!', 'নতুন রেকর্ড! রাস্তায় তুই এখন রাজা!', 'রেকর্ড ভাঙলি, ঢাকাও অবাক!', 'বিরিয়ানি তোর, কারণ রেকর্ডও তোর!', 'এই স্কোরে ফেসবুকে পোস্ট বাধ্যতামূলক!', 'মামারা সবাই সেলুট দিচ্ছে!', 'হাতে ফুলের মালা, পায়ে প্যাডেলের তালা!', 'আজকের সেরা প্যাডেলার, নাম লেখা হলো ইতিহাসে!', 'নিজের রেকর্ড নিজেই ভাঙলি, আসল কিংবদন্তি!', 'এটাই তো আসল ঢাকাইয়া গর্ব!'],
+  pbLive: ['রেকর্ড পার! আরও চালা!', 'নতুন রেকর্ড চলছে, থামিস না!', 'আগের রেকর্ড পেছনে, সামনে ইতিহাস!', 'ওস্তাদ, এইবার রেকর্ড আমার!', 'দৌড়াচ্ছিস রেকর্ডের দিকে, থামিস না!'],
+  rare: ['আজ কপাল খুলেছে মামা!', 'এমন দিন রোজ আসে না!', 'ভাগ্য আজ রিকশার পক্ষে!', 'ঢাকা আজ মেহেরবান!', 'রাস্তাও আজ তোর ফ্যান!', 'বিরল মুহূর্ত! স্ক্রিনশট নে!', 'লটারি লেগেছে নাকি?', 'আজ তো পুরো সিনেমা!', 'কপাল ভালো, চালাও জোরে!', 'মামা, এইটা কিন্তু রেয়ার আইটেম!'],
+  comeback: ['ফিরে এসেছি, এবার আর ছাড়ব না!', 'প্রতিশোধ নিতে এলাম, মামা!', 'এবার রাস্তা আমার কথা শুনবে!', 'ধাক্কা খেয়ে শিখেছি, এবার উড়ব!', 'আগেরবার ভুল, এবার ঠিক!', 'ব্যথা ভুলে প্যাডেলে জোর!', 'দ্বিতীয় সুযোগ, দ্বিগুণ সাহস!', 'ঢাকা, প্রস্তুত থাকো!'],
+  ach: ['অর্জন আনলক! মামা গর্বিত!', 'একটা ব্যাজ জুটল, বিরিয়ানির পরেই!', 'বাহ! ফেসবুকে দেওয়ার মতো কিছু!', 'ট্রাফিক পুলিশও হাততালি দিচ্ছে!', 'অর্জন নিলি, এবার সামনে তাকা!', 'এইটা তো আজকের হাইলাইট!', 'মামার ঝুলিতে আরেক পদক!', 'পদক পেলি, পেট্রোল লাগবে না!']
+};
+const recentLines = [];
+function pickLine(arr) {
+  let s, n = 0;
+  do { s = pick(arr); n++; } while (recentLines.indexOf(s) >= 0 && n < 14);
+  recentLines.push(s); if (recentLines.length > 16) recentLines.shift(); return s;
+}
+
+// ====== র‍্যাঙ্ক (২০টি) ======
+const RANKS = [['নতুন রিকশাচালক', 0], ['গলির শিক্ষানবিশ', 250], ['প্যাডেল যোদ্ধা', 600], ['জ্যামের বন্দি', 1000], ['রাস্তার খেলোয়াড়', 1500], ['হর্নের ওস্তাদ', 2200], ['ফার্মগেট ফাইটার', 3000], ['জ্যামের যোদ্ধা', 4000], ['রিকশা ড্রিফট কিং', 5200], ['ঢাকার সারভাইভার', 6600], ['মামাদের মামা', 8200], ['গুলিস্তানের গেমার', 10000], ['জ্যামের বস', 12200], ['ট্রাফিক ট্যাকটিশিয়ান', 14800], ['রাস্তার কিংবদন্তি', 17800], ['ঢাকার সম্রাট', 21200], ['প্যাডেলের প্রফেসর', 25000], ['বেলের বাদশাহ', 29500], ['ট্রাফিকের Final Boss', 35000], ['ঢাকার অমর কিংবদন্তি', 42000]];
+function rankFor(score) { let i = 0; for (let k = 0; k < RANKS.length; k++) if (score >= RANKS[k][1]) i = k; return { idx: i, name: RANKS[i][0] }; }
+
+// ====== অর্জন (২৭টি) ======
+const ACH = [
+  ['firstRide', '🛺', 'প্রথম যাত্রা', 'প্রথম রান শেষ কর'],
+  ['bellBeginner', '🔔', 'বেল শিক্ষানবিশ', 'প্রথমবার বেল বাজা'],
+  ['doubleTrouble', '📣', 'ডাবল ট্রাবল', 'বেল দুইবার টিপে "ওই মামা, সাইড দে!" বল'],
+  ['bellCombo', '🎶', 'বেল-কম্বো', '৬ সেকেন্ডে তিনবার বেল বাজা'],
+  ['bellChampion', '🏆', 'বেলের বাদশাহ', 'মোট ৫০ বার বেল বাজা'],
+  ['closeCall', '😮‍💨', 'অল্পের জন্য!', 'প্রথম নিয়ার-মিস'],
+  ['nearMissMachine', '⚡', 'নিয়ার-মিস মেশিন', 'নিয়ার-মিস কম্বো ৫ করে ফেল'],
+  ['combo10', '🔥', 'কম্বো কিং', 'নিয়ার-মিস কম্বো ১০ কর'],
+  ['nearMiss100', '🎯', 'শত ছোঁয়া', 'মোট ১০০ নিয়ার-মিস'],
+  ['survivor60', '⏱️', 'ট্রাফিক সারভাইভার', 'এক রানে ৬০ সেকেন্ড টিক'],
+  ['survivor180', '🕰️', 'জ্যামজয়ী', 'এক রানে ৩ মিনিট টিক'],
+  ['survivor300', '🧿', 'অমর রিকশাওয়ালা', 'এক রানে ৫ মিনিট টিক'],
+  ['safePlayer', '🧘', 'ধরাছোঁয়ার বাইরে', 'কোনো নিয়ার-মিস ছাড়াই ৪৫ সেকেন্ড টিক'],
+  ['roadLegend', '👑', 'রাস্তার কিংবদন্তি', 'এক রানে ৫০০০ স্কোর'],
+  ['score10k', '💎', 'দশ হাজারি', 'এক রানে ১০০০০ স্কোর'],
+  ['personalBest', '📈', 'নিজেকে ছাড়িয়ে', 'নিজের রেকর্ড ভাঙ'],
+  ['comebackKing', '🦁', 'কামব্যাক কিং', 'আগের রেকর্ড ২০% বেশি দিয়ে ভাঙ'],
+  ['dhakaVeteran', '🗺️', 'ঢাকার ভেটেরান', 'এক রানে ২০০০ মিটার'],
+  ['dodge50', '🚌', '৫০ গাড়ি কাটা', 'এক রানে ৫০টি গাড়ি এড়া'],
+  ['dodge500', '🪄', 'রাস্তার জাদুকর', 'মোট ৫০০ গাড়ি এড়া'],
+  ['potholePal', '🕳️', 'গর্তের বন্ধু', 'রাস্তার গর্তে পড়'],
+  ['legendCollector', '⭐', 'কিংবদন্তি শিকারি', '"ঢাকার কিংবদন্তি" বোনাস ধর'],
+  ['multiplier', '✨', 'ডাবল ধামাকা', '×২ বোনাস চালু কর'],
+  ['luckyStar', '🍀', 'ভাগ্যবান', 'ভাগ্যের গ্যাপ পার কর'],
+  ['rainRider', '🌧️', 'বৃষ্টিবাজ', 'বৃষ্টির ইভেন্ট টিকে যা'],
+  ['runs10', '🎫', 'নিয়মিত যাত্রী', 'মোট ১০টি রান খেল'],
+  ['stormSpeed', '🌪️', 'ঝড়ের গতি', 'সর্বোচ্চ গতির কাছাকাছি পৌঁছা']
+];
+
+// ====== ক্যানভাস ও ড্রয়িং ======
+const stage = $('stage'), cv = $('cv'), cx = cv.getContext('2d');
+let SX = 1;
+function resize() {
+  const vw = window.innerWidth, vh = window.innerHeight;
+  let w = Math.min(vw, vh * 9 / 16), h = w * 16 / 9;
+  if (h > vh) { h = vh; w = h * 9 / 16; }
+  stage.style.width = w + 'px'; stage.style.height = h + 'px'; stage.style.setProperty('--u', (w / 100) + 'px');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); SX = cv.width / W;
+}
+
+function tileCanvas(w, h, fn) { const t = document.createElement('canvas'); t.width = w * 2; t.height = h * 2; const g = t.getContext('2d'); g.scale(2, 2); fn(g, w, h); return t; }
+const roadTile = tileCanvas(260, 256, (g, w, h) => {
+  g.fillStyle = '#3a3d45'; g.fillRect(0, 0, w, h);
+  for (let i = 0; i < 520; i++) { g.fillStyle = Math.random() < 0.5 ? 'rgba(255,255,255,.05)' : 'rgba(0,0,0,.12)'; g.fillRect(Math.random() * w, Math.random() * h, rand(1, 3), rand(1, 3)); }
+  g.strokeStyle = 'rgba(0,0,0,.25)'; g.lineWidth = 1;
+  for (let i = 0; i < 5; i++) { g.beginPath(); let x = rand(10, w - 10), y = rand(0, h - 40); g.moveTo(x, y); for (let k = 0; k < 4; k++) { x += rand(-8, 8); y += rand(6, 14); g.lineTo(x, y); } g.stroke(); }
+  g.fillStyle = 'rgba(0,0,0,.12)'; for (let i = 0; i < 3; i++) { g.beginPath(); g.ellipse(rand(20, w - 20), rand(10, h - 10), rand(10, 20), rand(6, 12), 0, 0, 7); g.fill(); }
+});
+const sideTile = tileCanvas(50, 80, (g, w, h) => {
+  g.fillStyle = '#8a8478'; g.fillRect(0, 0, w, h);
+  g.strokeStyle = 'rgba(0,0,0,.28)'; g.lineWidth = 1;
+  for (let y = 0; y < h; y += 16) { g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); for (let x = (y / 16) % 2 ? 0 : 8; x < w; x += 16) { g.beginPath(); g.moveTo(x, y); g.lineTo(x, y + 16); g.stroke(); } }
+  for (let i = 0; i < 60; i++) { g.fillStyle = 'rgba(255,255,255,.07)'; g.fillRect(Math.random() * w, Math.random() * h, 2, 2); }
+});
+
+// ----- পার্শ্ববর্তী বস্তু (দোকান, গাছ, খুঁটি) -----
+const SIGNS = ['চায়ের দোকান', 'ফার্মেসি', 'বিরিয়ানি ঘর', 'মোবাইল ফ্লেক্সি', 'মুদি বাজার', 'কাপড়ের হাট', 'হোটেল সোনার বাংলা', 'জুস কর্নার', 'রিকশা গ্যারেজ', 'পান-সিগারেট'];
+const AWN = ['#e63946', '#2ec4f1', '#ffb703', '#06d6a0', '#ff4d8d', '#8338ec'];
+const BUS_SIGNS = ['গুলিস্তান', 'মিরপুর', 'উত্তরা', 'সাভার', 'ঢাকা-১', 'ফার্মগেট'];
+let side = [], sideNext = [0, 0];
+function spawnSide(s, y) {
+  const kind = pick(['tree', 'shop', 'shop', 'pole', 'tree', 'busstop', 'stall']);
+  const len = { tree: 46, shop: 70, pole: 36, busstop: 86, stall: 52 }[kind];
+  const it = { s, y, kind, len, col: AWN[randInt(0, 5)], sign: pick(SIGNS), v: Math.random() };
+  side.push(it); return it;
+}
+function prefillSide() { side.length = 0; sideNext = [rand(10, 50), rand(10, 50)]; for (let s = 0; s < 2; s++) { let y = -50; while (y < H + 60) { const it = spawnSide(s, y); y += it.len + rand(8, 36); } } }
+function updateSide(dt, sc) {
+  for (const it of side) it.y += sc * dt;
+  for (let i = side.length - 1; i >= 0; i--) if (side[i].y > H + 100) side.splice(i, 1);
+  for (let s = 0; s < 2; s++) { sideNext[s] -= sc * dt; if (sideNext[s] <= 0) { const it = spawnSide(s, -70); sideNext[s] = it.len + rand(8, 36); } }
+}
+function drawSideItem(c, it) {
+  c.save(); const m = it.s === 1;
+  if (m) { c.translate(W, 0); c.scale(-1, 1); }
+  const y = it.y;
+  const text = (str, lx, ly, rot, size, col) => { c.save(); c.translate(lx, ly); if (m) c.scale(-1, 1); c.rotate(rot); c.font = 'bold ' + size + 'px ' + FONT; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillStyle = col; c.fillText(str, 0, 0); c.restore(); };
+  if (it.kind === 'tree') {
+    c.fillStyle = 'rgba(0,0,0,.22)'; c.beginPath(); c.ellipse(26, y + 3, 20, 18, 0, 0, 7); c.fill();
+    c.fillStyle = '#2f8f46'; c.beginPath(); c.arc(22, y, 16, 0, 7); c.fill();
+    c.fillStyle = '#3fae5a'; c.beginPath(); c.arc(28, y - 5, 11, 0, 7); c.fill();
+    c.fillStyle = '#6fd184'; c.beginPath(); c.arc(18, y - 6, 5, 0, 7); c.fill();
+  } else if (it.kind === 'pole') {
+    c.strokeStyle = '#4a3b2a'; c.lineWidth = 2.4; c.beginPath(); c.moveTo(43, y - 11); c.lineTo(43, y + 11); c.stroke();
+    c.fillStyle = '#222'; c.beginPath(); c.arc(43, y, 3, 0, 7); c.fill();
+    c.fillStyle = '#ddd'; c.fillRect(42, y - 12, 2, 2); c.fillRect(42, y + 10, 2, 2);
+  } else if (it.kind === 'shop') {
+    c.fillStyle = 'rgba(0,0,0,.22)'; c.fillRect(6, y - 23, 40, 52);
+    c.fillStyle = '#d8c9a2'; c.fillRect(3, y - 26, 32, 52);
+    c.fillStyle = '#9aa3ad'; c.fillRect(3, y - 26, 32, 52);
+    c.strokeStyle = 'rgba(0,0,0,.25)'; c.lineWidth = 1; for (let k = 0; k < 7; k++) { c.beginPath(); c.moveTo(3, y - 24 + k * 7.5); c.lineTo(35, y - 24 + k * 7.5); c.stroke(); }
+    for (let k = 0; k < 5; k++) { c.fillStyle = k % 2 ? '#fff' : it.col; c.fillRect(35, y - 26 + k * 10.4, 12, 10.4); }
+    c.fillStyle = '#15161a'; c.fillRect(8, y - 9, 22, 18);
+    text(it.sign, 19, y, -Math.PI / 2, 8, '#fff6e0');
+  } else if (it.kind === 'busstop') {
+    c.fillStyle = 'rgba(0,0,0,.2)'; c.fillRect(30, y - 38, 18, 80);
+    c.fillStyle = 'rgba(46,196,241,.75)'; c.fillRect(28, y - 40, 18, 80); c.strokeStyle = '#0b5a73'; c.lineWidth = 1.5; c.strokeRect(28, y - 40, 18, 80);
+    c.fillStyle = '#5c4630'; c.fillRect(31, y - 8, 5, 24);
+    [['#e63946', y - 28], ['#ffb703', y - 18], ['#06d6a0', y + 24], ['#8338ec', y + 32]].forEach(p => { c.fillStyle = p[0]; c.beginPath(); c.arc(39, p[1], 3.4, 0, 7); c.fill(); c.fillStyle = '#2b1d12'; c.beginPath(); c.arc(39, p[1], 2, 0, 7); c.fill(); });
+    c.fillStyle = '#ffd23f'; c.fillRect(8, y - 18, 12, 36); text('বাস স্টপ', 14, y, -Math.PI / 2, 8, '#15161a');
+  } else {
+    c.fillStyle = 'rgba(0,0,0,.2)'; c.beginPath(); c.arc(26, y + 3, 17, 0, 7); c.fill();
+    for (let k = 0; k < 8; k++) { c.fillStyle = k % 2 ? '#fff' : it.col; c.beginPath(); c.moveTo(24, y); c.arc(24, y, 16, k * Math.PI / 4, (k + 1) * Math.PI / 4); c.closePath(); c.fill(); }
+    c.fillStyle = '#6b4a2b'; c.fillRect(40, y - 12, 8, 24); c.fillStyle = '#ff9f1c'; c.beginPath(); c.arc(44, y - 6, 2.5, 0, 7); c.arc(44, y + 4, 2.5, 0, 7); c.fill();
+  }
+  c.restore();
+}
+
+function drawRoad(c) {
+  const off = G.roadOff;
+  const oy = (off % 256);
+  for (let y = oy - 256; y < H; y += 256) c.drawImage(roadTile, ROAD_L, y, 260, 256);
+  const so = off % 80;
+  for (let y = so - 80; y < H; y += 80) { c.drawImage(sideTile, 0, y, 50, 80); c.drawImage(sideTile, ROAD_R, y, 50, 80); }
+  c.fillStyle = 'rgba(0,0,0,.35)'; c.fillRect(ROAD_L - 2, 0, 2, H); c.fillRect(ROAD_R, 0, 2, H);
+  const co = off % 24;
+  for (let y = co - 24, k = 0; y < H; y += 12, k++) { c.fillStyle = k % 2 ? '#fff6e0' : '#e63946'; c.fillRect(ROAD_L - 7, y, 5, 12); c.fillRect(ROAD_R + 2, y, 5, 12); }
+  c.strokeStyle = 'rgba(255,255,255,.8)'; c.lineWidth = 2; c.setLineDash([]);
+  c.beginPath(); c.moveTo(ROAD_L + 4, 0); c.lineTo(ROAD_L + 4, H); c.moveTo(ROAD_R - 4, 0); c.lineTo(ROAD_R - 4, H); c.stroke();
+  c.setLineDash([30, 26]); c.lineDashOffset = -off;
+  c.beginPath(); for (const k of [1, 3]) { const x = ROAD_L + LANE_W * k; c.moveTo(x, -60); c.lineTo(x, H + 60); } c.stroke();
+  c.setLineDash([]); c.strokeStyle = '#ffc83d'; c.lineWidth = 2;
+  const cxm = ROAD_L + LANE_W * 2; c.beginPath(); c.moveTo(cxm - 2, 0); c.lineTo(cxm - 2, H); c.moveTo(cxm + 2, 0); c.lineTo(cxm + 2, H); c.stroke();
+  for (const it of side) if (it.y > -80 && it.y < H + 80) drawSideItem(c, it);
+}
+
+// ----- রিকশা ও রিকশাচালক -----
+const RICK_PAL = [
+  { canopy: ['#e63946', '#ffb703', '#06d6a0'], frame: '#1d3557', seat: '#ffd23f', lungi: '#2a9d8f', shirt: '#f4a261' },
+  { canopy: ['#8338ec', '#ff4d8d', '#ffd23f'], frame: '#6a040f', seat: '#90e0ef', lungi: '#e76f51', shirt: '#90be6d' },
+  { canopy: ['#06d6a0', '#118ab2', '#ffd166'], frame: '#073b4c', seat: '#ef476f', lungi: '#3a86ff', shirt: '#f9c74f' },
+  { canopy: ['#ff9f1c', '#e71d36', '#2ec4b6'], frame: '#2b2d42', seat: '#fff', lungi: '#9b5de5', shirt: '#43aa8b' }
+];
+function wheel(c, x, y, w, h, ph) {
+  c.fillStyle = '#16171b'; rr(c, x - w / 2, y - h / 2, w, h, w / 2); c.fill();
+  c.strokeStyle = '#cfd3da'; c.lineWidth = 0.9; const n = 5, st = h / n;
+  for (let i = 0; i < n; i++) { const yy = y - h / 2 + ((i * st + ph) % h); c.beginPath(); c.moveTo(x - w / 2 + 0.5, yy); c.lineTo(x + w / 2 - 0.5, yy); c.stroke(); }
+  c.fillStyle = '#8d949e'; c.fillRect(x - 0.6, y - h / 2 + 1, 1.2, h - 2);
+}
+function drawFace(c, mood, ny) {
+  const ex = 2.6, ey = -22.8;
+  const shock = mood === 'shock', win = mood === 'win';
+  c.fillStyle = '#fff';
+  c.beginPath(); c.arc(-ex, ey, shock ? 2.5 : 1.9, 0, 7); c.arc(ex, ey, shock ? 2.5 : 1.9, 0, 7); c.fill();
+  c.fillStyle = '#111';
+  const pr = shock ? 0.8 : 1.05; c.beginPath(); c.arc(-ex, ey - (shock ? 0 : 0.6), pr, 0, 7); c.arc(ex, ey - (shock ? 0 : 0.6), pr, 0, 7); c.fill();
+  c.strokeStyle = '#1b1b1b'; c.lineWidth = 0.9; c.lineCap = 'round';
+  c.beginPath();
+  if (mood === 'shout' || shock) { c.moveTo(-5, ey - 4); c.lineTo(-1, ey - 3); c.moveTo(5, ey - 4); c.lineTo(1, ey - 3); }
+  else if (win) { c.moveTo(-4.5, ey - 3.2); c.lineTo(-1, ey - 3.6); c.moveTo(4.5, ey - 3.2); c.lineTo(1, ey - 3.6); }
+  else { c.moveTo(-4.5, ey - 3.2); c.lineTo(-1, ey - 3.2); c.moveTo(4.5, ey - 3.2); c.lineTo(1, ey - 3.2); }
+  c.stroke();
+  c.fillStyle = '#7a4a2a'; c.beginPath(); c.arc(0, -20.6, 1.1, 0, 7); c.fill();
+  c.fillStyle = '#1b1b1b'; c.beginPath(); c.moveTo(-3.8, -19.4); c.quadraticCurveTo(0, -21.2, 3.8, -19.4); c.quadraticCurveTo(0, -18.4, -3.8, -19.4); c.fill();
+  if (mood === 'shout' || shock) { c.fillStyle = '#7a0f1c'; c.beginPath(); c.ellipse(0, -16.8, shock ? 2 : 2.8, shock ? 2.5 : 2, 0, 0, 7); c.fill(); }
+  else if (win) { c.fillStyle = '#fff'; c.beginPath(); c.moveTo(-3.2, -17.8); c.quadraticCurveTo(0, -13.8, 3.2, -17.8); c.closePath(); c.fill(); }
+  else { c.strokeStyle = '#4a1f10'; c.lineWidth = 0.8; c.beginPath(); c.moveTo(-2, -17.3); c.quadraticCurveTo(0, -16.2, 2, -17.3); c.stroke(); }
+}
+function drawRickshaw(c, o) {
+  const s = o.scale || 1, pal = RICK_PAL[(o.pal || 0) % RICK_PAL.length], ph = o.wheelPh || 0, pd = o.pedal || 0;
+  const mood = o.mood || 'normal', npc = o.rider === 'npc';
+  c.save(); c.translate(o.x, o.y); c.scale(s, s); c.rotate(o.rot || 0);
+  c.translate(0, 6); c.rotate(o.lean || 0); c.translate(0, -6);
+  c.fillStyle = 'rgba(0,0,0,.25)'; c.beginPath(); c.ellipse(3, 4, 23, 38, 0, 0, 7); c.fill();
+  wheel(c, -17, 20, 5, 24, ph); wheel(c, 17, 20, 5, 24, ph); wheel(c, 0, -28, 4.4, 20, ph);
+  c.strokeStyle = pal.frame; c.lineWidth = 2.4; c.lineCap = 'round';
+  c.beginPath(); c.moveTo(-17, 20); c.lineTo(17, 20); c.moveTo(0, -28); c.lineTo(0, -14); c.stroke();
+  c.fillStyle = pal.frame; rr(c, -12, -4, 24, 34, 4); c.fill();
+  c.fillStyle = pal.seat; rr(c, -10, 8, 20, 16, 4); c.fill();
+  if (o.passenger) { c.fillStyle = '#e0a878'; c.beginPath(); c.arc(0, 9, 5, 0, 7); c.fill(); c.fillStyle = '#fff'; c.beginPath(); c.arc(-2, 8, 1.5, 0, 7); c.arc(2, 8, 1.5, 0, 7); c.fill(); c.fillStyle = '#111'; c.beginPath(); c.arc(-2, 8, .6, 0, 7); c.arc(2, 8, .6, 0, 7); c.fill(); c.fillStyle = '#7a0f1c'; c.beginPath(); c.ellipse(0, 12, 1.4, 1.8, 0, 0, 7); c.fill(); }
+  // ছাউনি
+  c.save(); rr(c, -19, 14, 38, 24, 9); c.clip();
+  for (let i = 0; i < 7; i++) { c.fillStyle = pal.canopy[i % 3]; c.fillRect(-19 + i * 5.5, 14, 5.6, 24); }
+  c.fillStyle = 'rgba(255,255,255,.85)'; for (let i = 0; i < 3; i++) { c.beginPath(); c.arc(-9 + i * 9, 27, 2.4, 0, 7); c.fill(); c.fillStyle = pal.frame; c.beginPath(); c.arc(-9 + i * 9, 27, 1, 0, 7); c.fill(); c.fillStyle = 'rgba(255,255,255,.85)'; }
+  c.restore(); c.strokeStyle = '#111'; c.lineWidth = 1; rr(c, -19, 14, 38, 24, 9); c.stroke();
+  // রাইডার
+  const lo = Math.sin(pd) * 5;
+  c.fillStyle = pal.lungi;
+  for (const sg of [-1, 1]) { c.strokeStyle = pal.lungi; c.lineWidth = 5; c.beginPath(); c.moveTo(sg * 4, -3); c.lineTo(sg * 5.5, -11 + sg * lo); c.stroke(); c.fillStyle = '#2a1a10'; c.beginPath(); c.ellipse(sg * 5.5, -12.5 + sg * lo, 2.6, 1.8, 0, 0, 7); c.fill(); }
+  c.save(); rr(c, -9.5, -9, 19, 12, 4); c.fillStyle = pal.lungi; c.fill(); c.clip();
+  c.strokeStyle = '#ffd23f'; c.lineWidth = 0.8; for (let i = -2; i < 3; i++) { c.beginPath(); c.moveTo(i * 4, -9); c.lineTo(i * 4, 3); c.stroke(); c.beginPath(); c.moveTo(-10, i * 3 - 2); c.lineTo(10, i * 3 - 2); c.stroke(); }
+  c.restore();
+  c.fillStyle = npc ? pal.shirt : '#f1e9d2'; c.beginPath(); c.ellipse(0, -13, 8.5, 6, 0, 0, 7); c.fill();
+  if (!npc) { c.fillStyle = 'rgba(120,100,70,.5)'; c.beginPath(); c.ellipse(-3, -12, 2, 1.4, 0, 0, 7); c.fill(); c.strokeStyle = '#9b8f78'; c.lineWidth = .7; c.beginPath(); c.moveTo(2, -8.5); c.lineTo(3.5, -11); c.stroke(); c.fillStyle = '#f1e9d2'; c.beginPath(); c.moveTo(-6, -8.6); c.lineTo(-5, -6.6); c.lineTo(-3.6, -8.4); c.lineTo(-2.2, -6.4); c.lineTo(-1, -8.6); c.fill(); }
+  c.fillStyle = '#b87a4b'; c.beginPath(); c.arc(-8.6, -13.5, 3.3, 0, 7); c.arc(8.6, -13.5, 3.3, 0, 7); c.fill();
+  for (let i = 0; i < 6; i++) { c.fillStyle = i % 2 ? '#fff' : '#d62828'; c.fillRect(-9.5 + i * 3.2, -9.6, 3.2, 3.4); }
+  // হাত
+  c.strokeStyle = '#b87a4b'; c.lineWidth = 3.2; c.lineCap = 'round';
+  const up = mood === 'shock' || mood === 'win', bellUp = (o.bellT || 0) > 0 || mood === 'bell', shout = mood === 'shout';
+  c.beginPath();
+  if (up) { c.moveTo(-8.6, -13.5); c.lineTo(-14, -30); c.moveTo(8.6, -13.5); c.lineTo(14, -30); }
+  else {
+    c.moveTo(8.6, -13.5); c.lineTo(shout ? 9 : 12, shout ? -25 : -20);
+    if (bellUp) { c.moveTo(-8.6, -13.5); c.lineTo(-14, -26 - Math.sin(pd * 3 + (o.bellT || 0) * 30) * 1.5); } else { c.moveTo(-8.6, -13.5); c.lineTo(-12, -20); }
+  }
+  c.stroke();
+  if (!up) { c.strokeStyle = '#c0c5cc'; c.lineWidth = 1.8; c.beginPath(); c.moveTo(-14, -19); c.lineTo(14, -19); c.stroke(); c.fillStyle = '#ffb703'; c.beginPath(); c.arc(-12, -23.5, 2.6, Math.PI, 0); c.fill(); }
+  if (up || bellUp || shout) { c.fillStyle = '#b87a4b'; c.beginPath(); if (up) { c.arc(-14, -30, 2.2, 0, 7); c.arc(14, -30, 2.2, 0, 7); } else if (bellUp) c.arc(-14, -26.5, 2.2, 0, 7); else c.arc(9, -25, 2.2, 0, 7); c.fill(); }
+  if (bellUp && !npc) { const r = ((o.bellT || 0.3) * 20) % 6; c.strokeStyle = 'rgba(255,214,90,.8)'; c.lineWidth = 1; c.beginPath(); c.arc(-14, -26.5, 4 + r, 0, 7); c.stroke(); }
+  // মাথা
+  const hb = Math.sin(pd) * 0.5 + (mood === 'shock' ? Math.sin(G.clock * 40) * 0.8 : 0);
+  c.save(); c.translate(hb, 0);
+  c.fillStyle = '#b87a4b'; c.beginPath(); c.arc(-6.6, -21.5, 1.8, 0, 7); c.arc(6.6, -21.5, 1.8, 0, 7); c.fill();
+  c.beginPath(); c.arc(0, -21.5, 6.8, 0, 7); c.fill();
+  c.fillStyle = '#1b1b1b'; c.beginPath(); c.arc(0, -21.5, 6.9, 1.12 * Math.PI, 1.88 * Math.PI); c.lineTo(3, -25.5); c.lineTo(-3, -25.5); c.closePath(); c.fill();
+  if (mood === 'shock') { c.strokeStyle = '#1b1b1b'; c.lineWidth = 1; c.beginPath(); for (let i = -2; i <= 2; i++) { c.moveTo(i * 2.6, -27.6); c.lineTo(i * 3.4, -31.5); } c.stroke(); c.fillStyle = '#7ad7ff'; c.beginPath(); c.ellipse(-9, -25, 1, 1.7, 0, 0, 7); c.ellipse(9.4, -23, 1, 1.7, 0, 0, 7); c.fill(); }
+  if (npc) { c.fillStyle = '#1b1b1b'; c.beginPath(); c.arc(0, -21.5, 6.8, 0, 7); c.fill(); c.fillStyle = '#b87a4b'; c.beginPath(); c.arc(0, -19.5, 3, 0, 7); c.fill(); } else drawFace(c, mood);
+  c.restore();
+  c.restore();
+}
+
+// ----- অন্যান্য যানবাহন (টপ-ডাউন) -----
+const VT = {
+  bus: { w: 54, h: 118, f: [0.3, 0.42], cols: ['#f4a300', '#e63946', '#2a9d8f', '#3a86ff', '#8338ec'], wt: 2 },
+  car: { w: 38, h: 72, f: [0.42, 0.58], cols: ['#e63946', '#f1faee', '#ffbe0b', '#06d6a0', '#3a86ff', '#adb5bd'], wt: 4 },
+  moto: { w: 20, h: 42, f: [0.55, 0.72], cols: ['#2b2d42', '#e63946', '#ffbe0b'], wt: 3 },
+  rickshaw: { w: 30, h: 58, f: [0.12, 0.28], cols: ['#fff'], wt: 4 },
+  cng: { w: 38, h: 58, f: [0.35, 0.5], cols: ['#2e9e5b', '#1976d2', '#ff8c42'], wt: 3 },
+  delivery: { w: 44, h: 88, f: [0.3, 0.45], cols: ['#ffffff', '#ffd166', '#4cc9f0'], wt: 1.5 },
+  cart: { w: 46, h: 52, f: [0, 0.08], cols: ['#8d6e47'], wt: 0.5 },
+  barrier: { w: 122, h: 30, f: [0, 0], cols: ['#fff'], wt: 0 }
+};
+function blinkers(c, v, pts) { if (v.blink > 0 && Math.floor(v.blink * 5) % 2 === 0) { c.fillStyle = '#ff9f1c'; for (const p of pts) { if (v.blinkDir * p[0] > 0) { c.beginPath(); c.arc(p[0], p[1], 2.6, 0, 7); c.fill(); } } } }
+function tail(c, v, x1, x2, y, w) { c.fillStyle = v.brake ? '#ff2d2d' : '#9d1c1c'; c.fillRect(x1, y, w, 2.4); c.fillRect(x2, y, w, 2.4); }
+function head(c, x1, x2, y) { c.fillStyle = '#fff3b0'; c.beginPath(); c.arc(x1, y, 2.2, 0, 7); c.arc(x2, y, 2.2, 0, 7); c.fill(); }
+function drawVehicle(c, v) {
+  const w = v.w, h = v.h; c.save(); c.translate(v.x, v.y);
+  if (v.type === 'rickshaw') { c.restore(); drawRickshaw(c, { x: v.x, y: v.y, scale: 0.82, rider: 'npc', pal: v.pal, wheelPh: v.phase * 30 + G.roadOff * 0.9, pedal: v.phase + G.clock * 6, lean: 0 }); return; }
+  c.fillStyle = 'rgba(0,0,0,.25)'; rr(c, -w / 2 + 3, -h / 2 + 4, w, h, 8); c.fill();
+  if (v.type === 'bus') {
+    c.fillStyle = '#16171b'; [-h / 2 + 18, h / 2 - 28].forEach(y => { c.fillRect(-w / 2 - 1.5, y, 3, 14); c.fillRect(w / 2 - 1.5, y, 3, 14); });
+    c.fillStyle = v.col; rr(c, -w / 2, -h / 2, w, h, 9); c.fill();
+    c.fillStyle = 'rgba(255,255,255,.22)'; rr(c, -w / 2 + 4, -h / 2 + 16, w - 8, h - 30, 5); c.fill();
+    c.fillStyle = '#bfe9ff'; rr(c, -w / 2 + 4, -h / 2 + 3, w - 8, 11, 3); c.fill();
+    c.fillStyle = '#7fb7d4'; rr(c, -w / 2 + 6, h / 2 - 11, w - 12, 7, 2); c.fill();
+    c.fillStyle = 'rgba(0,0,0,.2)'; for (let i = 0; i < 4; i++) c.fillRect(-w / 2 + 4, -h / 2 + 46 + i * 15, w - 8, 2);
+    c.fillStyle = '#e9ecef'; rr(c, -8, h / 2 - 38, 16, 13, 3); c.fill();
+    c.fillStyle = '#15161a'; c.font = 'bold 9px ' + FONT; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(v.sign, 0, -h / 2 + 28);
+    head(c, -w / 2 + 6, w / 2 - 6, -h / 2 + 1.5); tail(c, v, -w / 2 + 3, w / 2 - 10, h / 2 - 3, 7);
+    blinkers(c, v, [[-w / 2 + 2, -h / 2 + 3], [w / 2 - 2, -h / 2 + 3], [-w / 2 + 2, h / 2 - 4], [w / 2 - 2, h / 2 - 4]]);
+  } else if (v.type === 'car') {
+    c.fillStyle = '#16171b'; [-h / 2 + 10, h / 2 - 22].forEach(y => { c.fillRect(-w / 2 - 1.5, y, 3, 12); c.fillRect(w / 2 - 1.5, y, 3, 12); });
+    c.fillStyle = v.col; rr(c, -w / 2, -h / 2, w, h, 11); c.fill();
+    c.fillStyle = '#9fd8f2'; rr(c, -w / 2 + 4, -h / 2 + 14, w - 8, 12, 4); c.fill(); rr(c, -w / 2 + 5, h / 2 - 20, w - 10, 9, 3); c.fill();
+    c.fillStyle = 'rgba(0,0,0,.18)'; rr(c, -w / 2 + 5, -h / 2 + 27, w - 10, h - 49, 5); c.fill();
+    head(c, -w / 2 + 6, w / 2 - 6, -h / 2 + 2.5); tail(c, v, -w / 2 + 3, w / 2 - 10, h / 2 - 4, 7);
+    blinkers(c, v, [[-w / 2 + 2, -h / 2 + 3], [w / 2 - 2, -h / 2 + 3]]);
+  } else if (v.type === 'moto') {
+    c.fillStyle = '#16171b'; rr(c, -1.8, -h / 2, 3.6, 13, 2); c.fill(); rr(c, -1.8, h / 2 - 14, 3.6, 14, 2); c.fill();
+    c.fillStyle = v.col; rr(c, -4, -8, 8, 24, 3); c.fill();
+    c.strokeStyle = '#999'; c.lineWidth = 2; c.beginPath(); c.moveTo(-9, -9); c.lineTo(9, -9); c.stroke();
+    c.fillStyle = v.pal % 2 ? '#3a86ff' : '#f4a261'; c.beginPath(); c.ellipse(0, 1, 8, 5.5, 0, 0, 7); c.fill();
+    c.fillStyle = '#222'; c.beginPath(); c.arc(0, -3, 4.6, 0, 7); c.fill(); c.fillStyle = '#e63946'; c.beginPath(); c.arc(0, -4, 3, Math.PI, 0); c.fill();
+    c.fillStyle = v.brake ? '#ff2d2d' : '#9d1c1c'; c.fillRect(-2, h / 2 - 3, 4, 2);
+  } else if (v.type === 'cng') {
+    c.fillStyle = '#16171b'; c.fillRect(-w / 2 - 1.5, h / 2 - 20, 3, 14); c.fillRect(w / 2 - 1.5, h / 2 - 20, 3, 14); rr(c, -2, -h / 2, 4, 11, 2); c.fill();
+    c.fillStyle = v.col; rr(c, -w / 2, -h / 2 + 8, w, h - 8, 9); c.fill();
+    c.fillStyle = '#1c1f26'; rr(c, -w / 2 + 3, -h / 2 + 14, w - 6, h - 24, 6); c.fill();
+    c.strokeStyle = 'rgba(255,255,255,.25)'; c.lineWidth = 1; for (let i = -2; i <= 2; i++) { c.beginPath(); c.moveTo(i * 6, -h / 2 + 16); c.lineTo(i * 6, h / 2 - 12); c.stroke(); }
+    c.fillStyle = '#9fd8f2'; rr(c, -w / 2 + 5, -h / 2 + 9.5, w - 10, 5, 2); c.fill();
+    head(c, 0, 0, -h / 2 + 8); tail(c, v, -w / 2 + 4, w / 2 - 10, h / 2 - 3, 6);
+    blinkers(c, v, [[-w / 2 + 2, -h / 2 + 12], [w / 2 - 2, -h / 2 + 12]]);
+  } else if (v.type === 'delivery') {
+    c.fillStyle = '#16171b'; [-h / 2 + 8, h / 2 - 22].forEach(y => { c.fillRect(-w / 2 - 1.5, y, 3, 14); c.fillRect(w / 2 - 1.5, y, 3, 14); });
+    c.fillStyle = '#e63946'; rr(c, -w / 2 + 2, -h / 2, w - 4, 26, 7); c.fill();
+    c.fillStyle = '#9fd8f2'; rr(c, -w / 2 + 6, -h / 2 + 3, w - 12, 8, 3); c.fill();
+    c.fillStyle = v.col; rr(c, -w / 2, -h / 2 + 27, w, h - 27, 4); c.fill();
+    c.strokeStyle = 'rgba(0,0,0,.3)'; c.lineWidth = 1.5; for (let i = 0; i < 4; i++) { c.beginPath(); c.moveTo(-w / 2, -h / 2 + 38 + i * 13); c.lineTo(w / 2, -h / 2 + 38 + i * 13); c.stroke(); }
+    c.fillStyle = '#e63946'; c.fillRect(-w / 2 + 6, -h / 2 + 34, w - 12, 3);
+    head(c, -w / 2 + 7, w / 2 - 7, -h / 2 + 1.5); tail(c, v, -w / 2 + 3, w / 2 - 10, h / 2 - 3, 7);
+  } else if (v.type === 'cart') {
+    c.fillStyle = '#16171b'; c.fillRect(-w / 2 - 2, -6, 4, 18); c.fillRect(w / 2 - 2, -6, 4, 18);
+    c.fillStyle = v.col; rr(c, -w / 2 + 2, -h / 2 + 6, w - 4, h - 12, 3); c.fill();
+    ['#f4d35e', '#e9c46a', '#f4d35e', '#9ad45b', '#e9c46a', '#f4a261'].forEach((col, i) => { c.fillStyle = col; c.beginPath(); c.arc(-11 + (i % 3) * 11, -8 + Math.floor(i / 3) * 12, 5.5, 0, 7); c.fill(); });
+    c.fillStyle = '#b87a4b'; c.beginPath(); c.arc(0, h / 2 - 3, 5, 0, 7); c.fill(); c.fillStyle = '#e8e2cf'; c.beginPath(); c.ellipse(0, h / 2 - 6, 7, 3, 0, 0, 7); c.fill();
+    blinkers(c, v, []);
+  } else if (v.type === 'barrier') {
+    for (let i = 0; i < 6; i++) { c.fillStyle = i % 2 ? '#fff' : '#e63946'; c.fillRect(-w / 2 + i * w / 6, -h / 2, w / 6, h); }
+    c.strokeStyle = '#000'; c.lineWidth = 2; c.strokeRect(-w / 2, -h / 2, w, h);
+    c.fillStyle = '#ffd23f'; rr(c, -26, -7, 52, 14, 3); c.fill(); c.fillStyle = '#15161a'; c.font = 'bold 9px ' + FONT; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('কাজ চলছে', 0, 0.5);
+    for (const cxp of [-w / 2 - 6, w / 2 + 6, -w / 4, w / 4]) { const cy = -h / 2 - 22; c.fillStyle = '#ff7b00'; c.beginPath(); c.arc(cxp, cy, 5, 0, 7); c.fill(); c.fillStyle = '#fff'; c.beginPath(); c.arc(cxp, cy, 2.4, 0, 7); c.fill(); }
+  }
+  c.restore();
+}
+
+function drawPothole(c, p) {
+  c.fillStyle = 'rgba(0,0,0,.35)'; c.beginPath(); c.ellipse(p.x, p.y, p.r + 2, p.r * 0.8 + 2, 0, 0, 7); c.fill();
+  c.fillStyle = '#17181c'; c.beginPath(); c.ellipse(p.x, p.y, p.r, p.r * 0.75, 0, 0, 7); c.fill();
+  c.fillStyle = (R.rainT > 0) ? 'rgba(120,170,220,.45)' : 'rgba(255,255,255,.07)'; c.beginPath(); c.ellipse(p.x - 2, p.y - 2, p.r * 0.6, p.r * 0.35, 0, 0, 7); c.fill();
+}
+function star(c, x, y, r1, r2, n, rot) { c.beginPath(); for (let i = 0; i < n * 2; i++) { const a = rot + i * Math.PI / n, r = i % 2 ? r2 : r1; c.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r); } c.closePath(); }
+function drawCoin(c, k) {
+  const pulse = 1 + Math.sin(G.clock * 6) * 0.08;
+  c.fillStyle = 'rgba(255,214,90,.3)'; c.beginPath(); c.arc(k.x, k.y, 20 * pulse, 0, 7); c.fill();
+  c.fillStyle = '#ffb703'; star(c, k.x, k.y, 14, 7, 5, G.clock * 1.5); c.fill(); c.strokeStyle = '#000'; c.lineWidth = 1.5; c.stroke();
+  c.fillStyle = '#15161a'; c.font = 'bold 8px ' + FONT; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('কিং', k.x, k.y + 1);
+}
+function drawDust(c) { for (const d of R.dust) { c.fillStyle = 'rgba(214,190,150,' + (0.3 * d.a).toFixed(3) + ')'; c.beginPath(); c.ellipse(d.x, d.y, d.r, d.r * 0.7, 0, 0, 7); c.ellipse(d.x + d.r * 0.5, d.y + 6, d.r * 0.7, d.r * 0.5, 0, 0, 7); c.ellipse(d.x - d.r * 0.5, d.y - 4, d.r * 0.6, d.r * 0.5, 0, 0, 7); c.fill(); } }
+function drawParticles(c) {
+  for (const p of particles) {
+    const a = clamp(p.life / p.max, 0, 1); c.globalAlpha = a; c.fillStyle = p.col;
+    if (p.type === 'star') { star(c, p.x, p.y, p.s, p.s * 0.45, 5, p.rot); c.fill(); }
+    else if (p.type === 'conf') { c.save(); c.translate(p.x, p.y); c.rotate(p.rot); c.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); c.restore(); }
+    else if (p.type === 'dust') { c.beginPath(); c.arc(p.x, p.y, p.s * (2 - a), 0, 7); c.fill(); }
+    else { c.beginPath(); c.arc(p.x, p.y, p.s, 0, 7); c.fill(); }
+  }
+  c.globalAlpha = 1;
+  for (const r of ripples) { c.strokeStyle = 'rgba(255,214,90,' + (1 - r.t / 0.55).toFixed(2) + ')'; c.lineWidth = 2; c.beginPath(); c.arc(r.x, r.y, 4 + r.t * 70, 0, 7); c.stroke(); }
+}
+function drawRain(c) {
+  if (R.rainT <= 0 && R.rainFade <= 0) return;
+  const k = R.rainT > 0 ? 1 : R.rainFade;
+  c.fillStyle = 'rgba(15,25,50,' + (0.2 * k).toFixed(2) + ')'; c.fillRect(0, 0, W, H);
+  c.strokeStyle = 'rgba(190,215,255,' + (0.45 * k).toFixed(2) + ')'; c.lineWidth = 1; c.beginPath();
+  for (const d of rainDrops) { c.moveTo(d.x, d.y); c.lineTo(d.x - 2, d.y + d.l); } c.stroke();
+}
+function wrapText(c, text, maxW) {
+  const words = text.split(' '), lines = []; let cur = '';
+  for (const w of words) { const t = cur ? cur + ' ' + w : w; if (c.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }
+  if (cur) lines.push(cur); return lines;
+}
+function addBubble(text, x, y, o) {
+  o = o || {}; const big = !!o.big, fs = big ? 20 : 12;
+  cx.font = '800 ' + fs + 'px ' + FONT; const lines = wrapText(cx, text, big ? 200 : 150);
+  let mw = 0; for (const l of lines) mw = Math.max(mw, cx.measureText(l).width);
+  if (bubbles.length > 4) bubbles.shift();
+  bubbles.push({ text, lines, fs, w: mw + 16, h: lines.length * fs * 1.3 + 10, big, color: o.color || '#fff', fo: o.fo || null, dx: o.dx || 0, dy: o.dy || 0, x, y, t: 0, life: o.life || 2.2 });
+}
+function drawBubbles(c) {
+  for (const b of bubbles) {
+    if (b.fo) { b.x = b.fo.x + b.dx; b.y = b.fo.y + b.dy; }
+    const pop = Math.min(1, b.t / 0.18), sc = 1 + (1 - pop) * -0.5 + Math.sin(pop * Math.PI) * 0.12, fade = clamp((b.life - b.t) / 0.35, 0, 1);
+    c.save(); c.globalAlpha = fade; c.translate(b.x, b.y); c.scale(sc, sc);
+    let bx = clamp(-b.w / 2 + b.x, 6, W - 6 - b.w) - b.x, by = -10 - b.h;
+    if (b.y + by < 78) by = 14;
+    if (b.big) c.rotate(-0.05);
+    c.fillStyle = b.color; c.strokeStyle = '#000'; c.lineWidth = b.big ? 3 : 2;
+    rr(c, bx, by, b.w, b.h, 10); c.fill(); c.stroke();
+    c.beginPath(); if (by > 0) { c.moveTo(-5, by); c.lineTo(0, 0); c.lineTo(5, by); } else { c.moveTo(-5, by + b.h); c.lineTo(0, 0); c.lineTo(5, by + b.h); }
+    c.fill();
+    c.fillStyle = b.big ? '#15161a' : '#15161a'; c.font = '800 ' + b.fs + 'px ' + FONT; c.textAlign = 'center'; c.textBaseline = 'middle';
+    b.lines.forEach((l, i) => c.fillText(l, bx + b.w / 2, by + 5 + b.fs * 0.65 + i * b.fs * 1.3));
+    c.restore();
+  }
+}
+
+// ====== গেম স্টেট ======
+const G = { mode: 'menu', clock: 0, roadOff: 0, scroll: 120, diff: 0, shake: 0, slowT: 0, timeScale: 1, statusT: 0, lastBellAt: 0, lastDoubleAt: 0, lastBubbleAt: 0, commentT: 8, statsOpen: false, hudT: 0, crashT: 0, demoT: 0 };
+const particles = [], ripples = [], bubbles = [], vehicles = [], rainDrops = [];
+for (let i = 0; i < 60; i++) rainDrops.push({ x: Math.random() * W, y: Math.random() * H, l: rand(8, 16) });
+const P = { x: 180, y: PLAYER_Y, vx: 0, w: 26, h: 50, lean: 0, pedal: 0, wheelPh: 0, bellT: 0, shoutT: 0, winT: 0 };
+const keys = { left: false, right: false }, ui = { left: false, right: false }, drag = { active: false, x: 0 };
+let R = null, lastResult = null, cardBlob = null;
+function newRun() {
+  R = { t: 0, scoreF: 0, dist: 0, avoided: 0, near: 0, combo: 0, maxCombo: 0, lastNearT: -99, lastSlow: -99, bells: 0, bellPts: 0, doubles: 0, bellTimes: [], bellCombos: 0, lastComboAt: -99999, mult: 1, multT: 0, rainT: 0, rainFade: 0, jamT: 0, waveT: 0, waveMult: 1, gapT: 0, slowPot: 0, spawnT: 1.5, potT: 6, eventT: 9, pots: [], coins: [], dust: [], potHits: 0, pbDone: false, collider: '', prevBest: save.best, eventCount: 0, achT: 0 };
+}
+const E = {};
+function addScore(p) { R.scoreF += p; }
+
+// ----- ইফেক্ট -----
+function addParticles(n, x, y, o) {
+  o = o || {}; if (reduced) n = Math.ceil(n * 0.4);
+  for (let i = 0; i < n && particles.length < 140; i++) {
+    const a = rand(0, 6.28), sp = rand(o.sp0 || 30, o.sp1 || 140);
+    particles.push({ x, y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - (o.up || 0), g: o.g || 0, life: rand(0.4, 0.9), max: 0.9, s: rand(o.s0 || 3, o.s1 || 7), col: o.col || pick(['#ffd23f', '#ff4d8d', '#2ec4f1', '#fff']), type: o.type || 'star', rot: rand(0, 6), vr: rand(-6, 6) });
+  }
+}
+function setStatus(text, sec) { E.status.textContent = text; E.status.classList.add('on'); G.statusT = sec || 2.6; }
+let toastQ = [], toastBusy = false;
+function toast(title, desc) { toastQ.push([title, desc]); if (!toastBusy) nextToast(); }
+function nextToast() {
+  const it = toastQ.shift(); if (!it) { toastBusy = false; return; }
+  toastBusy = true; E.toast.textContent = ''; E.toast.appendChild(document.createTextNode(it[0]));
+  const s = document.createElement('small'); s.textContent = it[1]; E.toast.appendChild(s); E.toast.classList.add('show');
+  setTimeout(() => { E.toast.classList.remove('show'); setTimeout(nextToast, 250); }, 2400);
+}
+function unlock(id) {
+  if (save.ach[id]) return; save.ach[id] = 1; persist();
+  const a = ACH.find(x => x[0] === id); if (!a) return;
+  toast('🏅 অর্জন: ' + a[2], a[3]); SFX.achievement();
+  if (G.mode === 'play') { setStatus(a[1] + ' ' + pickLine(LINES.ach), 2.6); addParticles(14, P.x, P.y - 20, { up: 40, g: 120 }); }
+}
+function checkAch() {
+  const t = R.t;
+  if (t >= 60) unlock('survivor60'); if (t >= 180) unlock('survivor180'); if (t >= 300) unlock('survivor300');
+  if (t >= 45 && R.near === 0) unlock('safePlayer');
+  if (R.scoreF >= 5000) unlock('roadLegend'); if (R.scoreF >= 10000) unlock('score10k');
+  if (R.dist >= 2000) unlock('dhakaVeteran'); if (R.avoided >= 50) unlock('dodge50'); if (save.totalAvoided + R.avoided >= 500) unlock('dodge500');
+  if (save.totalBells + R.bells >= 50) unlock('bellChampion'); if (save.totalNear + R.near >= 100) unlock('nearMiss100');
+  if (R.near >= 1) unlock('closeCall'); if (R.maxCombo >= 5) unlock('nearMissMachine'); if (R.maxCombo >= 10) unlock('combo10');
+  if (G.diff >= 0.85) unlock('stormSpeed');
+}
+
+// ----- যানবাহন স্পন -----
+function spaceFree(x, w, h, y, gap) { for (const v of vehicles) if (Math.abs(v.x - x) < (v.w + w) / 2 + 3 && Math.abs(v.y - y) < (v.h + h) / 2 + gap) return false; return true; }
+function lanesOf(x, w) { const s = []; for (let l = 0; l < LANES; l++) { const lx = ROAD_L + LANE_W * l; if (x + w / 2 > lx + 4 && x - w / 2 < lx + LANE_W - 4) s.push(l); } return s; }
+function blockedCount(x, w, h, y) {
+  const set = new Set(lanesOf(x, w));
+  for (const v of vehicles) if (Math.abs(v.y - y) < (v.h + h) / 2 + 45) lanesOf(v.x, v.w).forEach(l => set.add(l));
+  return set.size;
+}
+const maxBlocked = () => G.diff < 0.45 ? 2 : 3;
+function makeVehicle(type, x, y, o) {
+  const T = VT[type];
+  const v = { type, x, y, w: T.w, h: T.h, f: rand(T.f[0], T.f[1]), vyT: 0, vyCur: null, col: pick(T.cols), blink: 0, blinkDir: 0, tx: x, mv: false, pend: false, lat: 55, brake: 0, brakeT: 0, passed: false, minGap: 99, sign: pick(BUS_SIGNS), pal: randInt(0, 3), phase: Math.random() * 6, demo: false };
+  if (o) Object.assign(v, o); vehicles.push(v); return v;
+}
+function pickVType() {
+  const wts = { car: 4, rickshaw: 4, bus: 2 + G.diff * 1.5, cng: 3, moto: 3, delivery: 1.5 + G.diff, cart: 0.5 };
+  let tot = 0; for (const k in wts) tot += wts[k]; let r = Math.random() * tot;
+  for (const k in wts) { r -= wts[k]; if (r <= 0) return k; } return 'car';
+}
+function trySpawnVehicle() {
+  if (vehicles.length >= 15) return false;
+  const type = pickVType(), T = VT[type], y = -T.h / 2 - 12, gap = lerp(90, 55, G.diff);
+  for (const l of shuffle([0, 1, 2, 3])) {
+    const x = laneX(l) + rand(-5, 5) * (T.w < 45 ? 1 : 0.4);
+    if (!spaceFree(x, T.w, T.h, y, gap)) continue;
+    if (blockedCount(x, T.w, T.h, y) > maxBlocked()) continue;
+    makeVehicle(type, x, y); return true;
+  }
+  return false;
+}
+function updateVehicles(dt, sc, play) {
+  const wave = (play && R.waveT > 0) ? R.waveMult : 1;
+  vehicles.sort((a, b) => a.y - b.y);
+  for (let i = 0; i < vehicles.length; i++) {
+    const v = vehicles[i];
+    if (v.brakeT > 0) { v.brakeT -= dt; v.brake = 1; if (v.brakeT <= 0) v.brake = 0; }
+    const f = v.brakeT > 0 ? 0.03 : clamp(v.f * wave, 0, 0.95);
+    v.vyT = sc * (1 - f);
+    if (v.blink > 0) { v.blink -= dt; if (v.blink <= 0 && v.pend) { v.mv = true; v.pend = false; } }
+    if (v.mv) { const dx = v.tx - v.x, st = v.lat * dt; if (Math.abs(dx) <= st) { v.x = v.tx; v.mv = false; v.blinkDir = 0; } else v.x += Math.sign(dx) * st; }
+    for (let j = 0; j < i; j++) { const L = vehicles[j]; if (Math.abs(L.x - v.x) < (L.w + v.w) / 2 - 3) { const gap = (v.y - v.h / 2) - (L.y + L.h / 2); if (gap < 22 && gap > -v.h) v.vyT = Math.max(v.vyT, L.vyT); } }
+  }
+  for (let i = vehicles.length - 1; i >= 0; i--) {
+    const v = vehicles[i];
+    if (v.vyCur === null) v.vyCur = v.vyT;
+    v.vyCur += clamp(v.vyT - v.vyCur, -650 * dt, 650 * dt); v.y += v.vyCur * dt;
+    if (v.y > H + v.h) vehicles.splice(i, 1);
+  }
+}
+
+// ----- ইভেন্ট (১৬টি) -----
+function announce(text) { R.eventCount++; setStatus('⚠️ ' + text, 3); }
+function evBusLane() {
+  const c = vehicles.filter(v => v.type === 'bus' && v.y > 40 && v.y < 300 && !v.mv && v.blink <= 0 && !v.pend); if (!c.length) return false;
+  const b = pick(c), l = Math.round((b.x - ROAD_L) / LANE_W - 0.5);
+  for (const d of shuffle([-1, 1])) {
+    const nl = l + d; if (nl < 0 || nl > 3) continue; const tx = laneX(nl); if (!spaceFree(tx, b.w, b.h, b.y, 50)) continue;
+    b.blink = 0.9; b.blinkDir = d; b.pend = true; b.tx = tx; b.lat = 60; announce('বাসটা হঠাৎ লেন বদলাচ্ছে!'); return true;
+  }
+  return false;
+}
+function evMoto() { const k = randInt(1, 3), x = ROAD_L + LANE_W * k, y = -30; if (!spaceFree(x, 36, 42, y, 70)) return false; makeVehicle('moto', x, y, { f: 0.8 }); announce('মোটরসাইকেল ফাঁক গলে আসছে!'); return true; }
+function evStalled() { const l = randInt(0, 3), x = laneX(l) + rand(-12, 12), y = -45; if (!spaceFree(x, 30, 58, y, 90) || blockedCount(x, 30, 58, y) > maxBlocked()) return false; makeVehicle('rickshaw', x, y, { f: 0 }); announce('একটা রিকশা রাস্তা আটকে দাঁড়িয়ে!'); return true; }
+function evJam() { if (R.jamT > 0) return false; R.jamT = 5.5; announce('জ্যাম লেগে গেছে, গাড়ি বাড়ছে!'); return true; }
+function evRain() { if (R.rainT > 0) return false; R.rainT = 14; announce('বৃষ্টি নামল! রাস্তা পিচ্ছিল!'); return true; }
+function evPothole() {
+  const ls = shuffle([0, 1, 2, 3]).slice(0, 2); ls.forEach((l, i) => R.pots.push({ x: laneX(l) + rand(-12, 12), y: -30 - i * 90, r: rand(12, 17), hit: false }));
+  announce('সামনে গর্ত! খাল না, গর্ত!'); return true;
+}
+function evGap() { if (R.gapT > 0) return false; R.gapT = 3.2; announce('ভাগ্যের গ্যাপ! ট্রাফিক ফাঁকা!'); addBubble(pickLine(LINES.rare), P.x, P.y - 30, { fo: P, dy: -34, life: 2 }); return true; }
+function evLegend() { const l = randInt(0, 3), x = laneX(l); if (!spaceFree(x, 24, 24, -15, 70)) return false; R.coins.push({ x, y: -15 }); announce('ঢাকার কিংবদন্তি বোনাস! ধর ধর!'); return true; }
+function evCart() {
+  const l = Math.random() < 0.5 ? 0 : 3, tx = l === 0 ? ROAD_L + 27 : ROAD_R - 27;
+  if (!spaceFree(tx, 46, 52, -30, 70) || blockedCount(tx, 46, 52, -30) > maxBlocked()) return false;
+  makeVehicle('cart', l === 0 ? ROAD_L - 26 : ROAD_R + 26, -30, { f: 0, blink: 1, blinkDir: l === 0 ? 1 : -1, pend: true, tx, lat: 45 });
+  announce('ঠেলাগাড়ি রাস্তা দখল করছে!'); return true;
+}
+function evConstruction() {
+  const k = randInt(0, 2), x = ROAD_L + LANE_W * (k + 1), y = -60;
+  if (!spaceFree(x, 122, 30, y, 100) || blockedCount(x, 122, 30, y) > maxBlocked()) return false;
+  makeVehicle('barrier', x, y, { f: 0 }); announce('সামনে রাস্তার কাজ চলছে!'); return true;
+}
+function evDust() { for (let i = 0; i < 4; i++) R.dust.push({ x: rand(60, 300), y: -40 - i * 70, r: rand(24, 40), a: 1 }); announce('ধুলার মেঘ! (নিরীহ, চোখ ঠিক রাখ)'); return true; }
+function evMult() { if (R.multT > 0) return false; R.mult = 2; R.multT = 10; unlock('multiplier'); announce('ডাবল ধামাকা! ১০ সেকেন্ড পয়েন্ট দ্বিগুণ!'); SFX.coin(); return true; }
+function evWave() { if (R.waveT > 0) return false; R.waveT = 6; R.waveMult = Math.random() < 0.5 ? 0.6 : 1.25; announce(R.waveMult < 1 ? 'ট্রাফিক ঢেউ! গাড়ি ধীর, কাছে আসছে দ্রুত!' : 'ট্রাফিক ঢেউ! গাড়ি দ্রুত ছুটছে!'); return true; }
+function evCng() { const c = vehicles.filter(v => v.type === 'cng' && v.y > 30 && v.y < 280 && v.brakeT <= 0); if (!c.length) return false; pick(c).brakeT = 1.6; announce('সিএনজি হঠাৎ ব্রেক মারল!'); return true; }
+const EVENTS = [[evBusLane, 3, 0], [evMoto, 3, 0], [evStalled, 2, 10], [evJam, 2, 25], [evRain, 2, 20], [evPothole, 3, 0], [evGap, 2, 12], [evLegend, 2, 0], [evCart, 2, 18], [evConstruction, 2, 30], [evDust, 2, 0], [evMult, 1.5, 15], [evWave, 2, 15], [evCng, 2, 0]];
+function runRandomEvent() {
+  const pool = EVENTS.filter(e => R.t >= e[2]); let tries = 0;
+  while (tries++ < 5) { let tot = 0; pool.forEach(e => tot += e[1]); let r = Math.random() * tot, ch = pool[0]; for (const e of pool) { r -= e[1]; if (r <= 0) { ch = e; break; } } if (ch[0]()) return; }
+}
+
+// ----- বেল -----
+function ringBell() {
+  if (G.mode !== 'play') return;
+  const now = performance.now(), since = now - G.lastBellAt; G.lastBellAt = now;
+  R.bells++; unlock('bellBeginner');
+  R.bellTimes.push(now); while (R.bellTimes.length && now - R.bellTimes[0] > 6000) R.bellTimes.shift();
+  const isDouble = since < 450 && since > 30 && now - G.lastDoubleAt > 2500;
+  if (isDouble) {
+    G.lastDoubleAt = now; SFX.doubleBell(); P.shoutT = 1; G.shake = Math.max(G.shake, 0.35);
+    addBubble('ওই মামা, সাইড দে!', P.x, P.y - 30, { fo: P, dy: -34, big: true, color: '#ffd23f', life: 1.8 });
+    ripples.push({ x: P.x - 12, y: P.y - 24, t: 0 }, { x: P.x - 12, y: P.y - 24, t: -0.15 });
+    addParticles(10, P.x, P.y - 30, { up: 30 }); unlock('doubleTrouble'); setStatus('📣 ওই মামা, সাইড দে!', 2);
+    if (R.doubles < 5 && R.bellPts < 120) { R.doubles++; R.bellPts += 15; addScore(15); }
+  } else {
+    SFX.bell(); P.bellT = 0.35; ripples.push({ x: P.x - 12, y: P.y - 24, t: 0 });
+    if (now - G.lastBubbleAt > 700) {
+      G.lastBubbleAt = now; const spam = R.bellTimes.length >= 5;
+      const txt = pickLine(spam ? LINES.bellSpam : LINES.bell);
+      addBubble(txt, P.x, P.y - 30, { fo: P, dy: -34, life: 1.7 }); setStatus('🔔 ' + txt, 2);
+    }
+  }
+  if (R.bellTimes.length >= 3 && now - R.lastComboAt > 12000 && R.bellCombos < 3) {
+    R.lastComboAt = now; R.bellCombos++; R.bellTimes.length = 0; unlock('bellCombo');
+    if (R.bellPts < 120) { R.bellPts += 40; addScore(40); }
+    setStatus('🎶 বেল-কম্বো! তিন টিং এক সাথে!', 2.4); addParticles(12, P.x, P.y - 20, { up: 30 });
+  }
+}
+
+// ----- নিয়ার-মিস ও সংঘর্ষ -----
+function registerNearMiss(gap) {
+  const t = R.t; R.combo = (t - R.lastNearT < 3.5) ? R.combo + 1 : 1; R.lastNearT = t; R.maxCombo = Math.max(R.maxCombo, R.combo); R.near++;
+  addScore(Math.round(20 * Math.min(R.combo, 6) * R.mult));
+  if (R.combo === 5 || R.combo === 10) addScore(100);
+  SFX.nearMiss(); addParticles(8, P.x, P.y - 10, { col: pick(['#ffd23f', '#fff']), up: 20 });
+  const now = performance.now();
+  if (now - G.lastBubbleAt > 900) { G.lastBubbleAt = now; const l = pickLine(LINES.near); addBubble(l, P.x, P.y - 30, { fo: P, dy: -34, life: 1.6 }); setStatus('😮‍💨 ' + l, 2); }
+  if (gap < 4 && t - R.lastSlow > 5 && !reduced) { R.lastSlow = t; G.slowT = 0.55; }
+}
+function hitTest(v) { return Math.abs(v.x - P.x) < P.w / 2 - 1 + v.w / 2 - 3 && Math.abs(v.y - P.y) < P.h / 2 - 2 + v.h / 2 - 4; }
+function checkVehicles() {
+  for (const v of vehicles) {
+    if (hitTest(v)) { crash(v); return; }
+    if (Math.abs(v.y - P.y) < P.h / 2 + v.h / 2) { const gap = Math.abs(v.x - P.x) - (P.w / 2 + v.w / 2); if (gap < v.minGap) v.minGap = gap; }
+    if (!v.passed && v.y - v.h / 2 > P.y + P.h / 2) { v.passed = true; R.avoided++; addScore(10 * R.mult); if (v.minGap < 11) registerNearMiss(v.minGap); }
+  }
+}
+function setMode(m) {
+  G.mode = m; $('menu').hidden = m !== 'menu'; $('pauseScreen').hidden = m !== 'pause'; $('overScreen').hidden = m !== 'over'; $('statsScreen').hidden = !(m === 'menu' && G.statsOpen);
+  if (m === 'menu' && G.statsOpen) $('menu').hidden = true;
+  const pl = m === 'play' || m === 'pause' || m === 'crash';
+  $('hud').hidden = !pl; $('controls').hidden = !pl; $('credit').hidden = !pl;
+}
+function crash(v) {
+  if (G.mode !== 'play') return;
+  R.collider = v.type; G.crashT = 0; G.shake = 1; setMode('crash'); SFX.stopMusic(); SFX.crash();
+  ui.left = ui.right = false; drag.active = false;
+  addParticles(22, P.x, P.y - 15, { type: 'star', s0: 6, s1: 12, sp0: 60, sp1: 200 }); addParticles(12, P.x, P.y, { type: 'dust', col: '#c9b48b', s0: 5, s1: 9, sp0: 20, sp1: 80 });
+  addBubble('আআআ! ধড়াম!', P.x, P.y - 30, { fo: P, dy: -34, big: true, color: '#ff8fa3', life: 1.4 }); setStatus('💥 ধড়াম! সংঘর্ষ!', 3);
+}
+
+// ----- আপডেট -----
+function updatePlay(dt) {
+  R.t += dt; G.diff = 1 - Math.exp(-R.t / 75);
+  let sc = lerp(185, 400, G.diff); if (R.slowPot > 0) { R.slowPot -= dt; sc *= 0.62; }
+  G.scroll = lerp(G.scroll, sc, Math.min(1, dt * 4));
+  const sd = G.scroll * dt; G.roadOff += sd; R.dist += sd / 18; addScore((sd / 18 + dt * 1.5) * R.mult);
+  if (R.multT > 0) { R.multT -= dt; if (R.multT <= 0) R.mult = 1; }
+  if (R.rainT > 0) { R.rainT -= dt; if (R.rainT <= 0) { R.rainFade = 1; unlock('rainRider'); } } else if (R.rainFade > 0) R.rainFade -= dt * 0.5;
+  if (R.jamT > 0) R.jamT -= dt; if (R.waveT > 0) R.waveT -= dt;
+  if (R.gapT > 0) { R.gapT -= dt; if (R.gapT <= 0) unlock('luckyStar'); }
+  if (R.rainT > 0 || R.rainFade > 0) for (const d of rainDrops) { d.y += 700 * dt; if (d.y > H) { d.y = -20; d.x = Math.random() * W; } }
+  // স্টিয়ারিং
+  let a = (keys.right || ui.right ? 1 : 0) - (keys.left || ui.left ? 1 : 0);
+  if (!a && drag.active) { const d = drag.x - P.x; if (Math.abs(d) > 3) a = clamp(d / 18, -1, 1); }
+  const rain = R.rainT > 0, acc = rain ? 950 : 1700, fr = rain ? 420 : 1900, mx = 210;
+  if (a !== 0) P.vx += clamp(a * mx - P.vx, -acc * dt, acc * dt); else { const d = fr * dt; P.vx = Math.abs(P.vx) <= d ? 0 : P.vx - Math.sign(P.vx) * d; }
+  P.x += P.vx * dt; const lo = ROAD_L + 18, hi = ROAD_R - 18; if (P.x < lo) { P.x = lo; P.vx = 0; } if (P.x > hi) { P.x = hi; P.vx = 0; }
+  P.lean = lerp(P.lean, P.vx / mx * 0.2, Math.min(1, dt * 10)); P.pedal += G.scroll * dt * 0.12; P.wheelPh = (P.wheelPh + G.scroll * dt * 0.9) % 1000;
+  if (rain && Math.abs(P.vx) > 60 && Math.random() < 0.3) addParticles(1, P.x + rand(-10, 10), P.y + 24, { type: 'dust', col: '#9fc4ff', s0: 2, s1: 3, sp0: 5, sp1: 30 });
+  updateSide(dt, G.scroll);
+  // স্পন
+  R.spawnT -= dt;
+  if (R.spawnT <= 0) { if (R.gapT > 0) R.spawnT = 0.3; else { const ok = trySpawnVehicle(); R.spawnT = ok ? lerp(1, 0.52, G.diff) * (R.jamT > 0 ? 0.6 : 1) * lerp(1.8, 1, Math.min(1, R.t / 10)) * rand(0.8, 1.2) : 0.18; } }
+  R.potT -= dt; if (R.potT <= 0) { R.potT = rand(6, 11); const l = randInt(0, 3); R.pots.push({ x: laneX(l) + rand(-12, 12), y: -30, r: rand(11, 15), hit: false }); }
+  R.eventT -= dt; if (R.t > 6 && R.eventT <= 0) { runRandomEvent(); R.eventT = rand(6, 11) * (1 - 0.3 * G.diff); }
+  updateVehicles(dt, G.scroll, true);
+  for (let i = R.pots.length - 1; i >= 0; i--) {
+    const p = R.pots[i]; p.y += G.scroll * dt;
+    if (!p.hit && Math.abs(p.x - P.x) < p.r + 8 && Math.abs(p.y - P.y) < p.r + 22) { p.hit = true; R.slowPot = 1.1; R.potHits++; G.shake = Math.max(G.shake, 0.5); SFX.thud(); unlock('potholePal'); setStatus('🕳️ ঝাঁকুনি! গর্তে পড়লি!', 2); P.vx += rand(-60, 60); }
+    if (p.y > H + 40) R.pots.splice(i, 1);
+  }
+  for (let i = R.coins.length - 1; i >= 0; i--) {
+    const k = R.coins[i]; k.y += G.scroll * dt;
+    if (Math.hypot(k.x - P.x, k.y - P.y) < 26) { R.coins.splice(i, 1); addScore(150 * R.mult); unlock('legendCollector'); SFX.coin(); addParticles(16, k.x, k.y, { up: 30, g: 100 }); setStatus('⭐ ঢাকার কিংবদন্তি! +১৫০ ' + pickLine(LINES.rare), 2.8); }
+    else if (k.y > H + 30) R.coins.splice(i, 1);
+  }
+  for (let i = R.dust.length - 1; i >= 0; i--) { const d = R.dust[i]; d.y += G.scroll * dt * 0.95; d.x += 12 * dt; if (d.y > H + 60) R.dust.splice(i, 1); }
+  checkVehicles();
+  if (G.mode !== 'play') return;
+  if (!R.pbDone && R.prevBest > 0 && R.scoreF > R.prevBest) { R.pbDone = true; P.winT = 1.3; SFX.fanfare(); addParticles(30, P.x, 120, { type: 'conf', s0: 5, s1: 9, g: 160, sp0: 40, sp1: 160 }); const l = pickLine(LINES.pbLive); addBubble(l, P.x, P.y - 30, { fo: P, dy: -34, life: 2.2, color: '#b8ffcf' }); setStatus('🏆 ' + l, 3); }
+  G.commentT -= dt; if (G.commentT <= 0) { G.commentT = rand(9, 15); const c = vehicles.filter(v => v.y > 90 && v.y < 300); const l = pickLine(LINES.traffic); if (c.length) { const v = pick(c); addBubble(l, v.x, v.y, { fo: v, life: 2.4 }); } setStatus(l, 2.6); }
+  R.achT -= dt; if (R.achT <= 0) { R.achT = 0.5; checkAch(); }
+}
+function updateAmbient(dt) {
+  G.scroll = 120; G.roadOff += 120 * dt; updateSide(dt, 120);
+  G.demoT -= dt; if (G.demoT <= 0 && G.mode === 'menu') { G.demoT = rand(2, 3.5); const l = Math.random() < 0.5 ? 0 : 3; if (vehicles.length < 5 && spaceFree(laneX(l), 40, 80, -60, 60)) makeVehicle(pick(['car', 'bus', 'cng', 'rickshaw', 'moto']), laneX(l), -70, { demo: true }); }
+  updateVehicles(dt, 120, false);
+}
+function updateFx(dt) {
+  for (let i = particles.length - 1; i >= 0; i--) { const p = particles[i]; p.life -= dt; p.x += p.vx * dt; p.y += p.vy * dt; p.vy += p.g * dt; p.vx *= 0.985; p.rot += p.vr * dt; if (p.life <= 0) particles.splice(i, 1); }
+  for (let i = ripples.length - 1; i >= 0; i--) { ripples[i].t += dt; if (ripples[i].t > 0.55) ripples.splice(i, 1); }
+  for (let i = bubbles.length - 1; i >= 0; i--) { bubbles[i].t += dt; if (bubbles[i].t > bubbles[i].life) bubbles.splice(i, 1); }
+  P.bellT = Math.max(0, P.bellT - dt); P.shoutT = Math.max(0, P.shoutT - dt); P.winT = Math.max(0, P.winT - dt);
+  if (G.statusT > 0) { G.statusT -= dt; if (G.statusT <= 0) E.status.classList.remove('on'); }
+}
+function update(dtReal) {
+  G.clock += dtReal;
+  if (G.slowT > 0) { G.slowT -= dtReal; G.timeScale = lerp(G.timeScale, 0.45, Math.min(1, dtReal * 14)); } else G.timeScale = lerp(G.timeScale, 1, Math.min(1, dtReal * 8));
+  G.shake = Math.max(0, G.shake - dtReal * 2.2);
+  const m = G.mode;
+  if (m === 'pause') return;
+  if (m === 'play') updatePlay(dtReal * G.timeScale);
+  else if (m === 'crash') { G.crashT += dtReal; if (G.crashT >= 1.1) endRun(); }
+  else if (m === 'menu') updateAmbient(dtReal);
+  updateFx(m === 'crash' ? dtReal * 0.4 : dtReal);
+  if (m === 'play' || m === 'crash') { G.hudT -= dtReal; if (G.hudT <= 0) { G.hudT = 0.1; updateHud(); } }
+}
+const hudCache = {};
+function setText(el, key, txt) { if (hudCache[key] !== txt) { hudCache[key] = txt; el.textContent = txt; } }
+function updateHud() {
+  setText(E.hScore, 'sc', bn(Math.floor(R.scoreF))); setText(E.hBest, 'bs', 'সেরা: ' + bn(Math.max(save.best, Math.floor(R.scoreF))));
+  setText(E.hDist, 'ds', bn(Math.floor(R.dist)) + ' মি'); setText(E.hTime, 'tm', fmtTime(R.t)); setText(E.hNear, 'nr', 'নিয়ার-মিস: ' + bn(R.near));
+  const cb = R.combo > 1 && R.t - R.lastNearT < 3.5; if (E.hCombo.hidden === cb) E.hCombo.hidden = !cb; if (cb) setText(E.hCombo, 'cb', '🔥 কম্বো ×' + bn(R.combo));
+  const mu = R.mult > 1; if (E.hMult.hidden === mu) E.hMult.hidden = !mu; if (mu) setText(E.hMult, 'mu', '✨ ×' + bn(R.mult) + ' (' + bn(Math.ceil(R.multT)) + ')');
+}
+
+// ----- রেন্ডার -----
+function playerMood() {
+  if (G.mode === 'crash') return 'shock';
+  if (G.mode === 'over') return lastResult && lastResult.newRecord ? 'win' : 'shock';
+  if (P.winT > 0) return 'win'; if (P.shoutT > 0) return 'shout'; if (P.bellT > 0) return 'bell'; return 'normal';
+}
+function drawPlayer(c) {
+  if (G.mode === 'menu') { const k = G.clock; drawRickshaw(c, { x: 180, y: 335 + Math.sin(k * 2) * 2, scale: 2.6, rider: 'player', pal: 0, pedal: k * 3, wheelPh: k * 40, lean: Math.sin(k * 1.5) * 0.04, mood: (k % 4 < 0.45) ? 'bell' : 'normal', bellT: 0.3, passenger: false }); return; }
+  drawRickshaw(c, { x: P.x, y: P.y, scale: 1, rider: 'player', pal: 0, pedal: P.pedal, wheelPh: P.wheelPh, lean: P.lean, mood: playerMood(), bellT: P.bellT, passenger: false });
+}
+function render() {
+  const c = cx; c.setTransform(SX, 0, 0, SX, 0, 0); c.clearRect(0, 0, W, H); c.save();
+  if (G.shake > 0) { const m = G.shake * 6 * (reduced ? 0.3 : 1); c.translate(rand(-m, m), rand(-m, m)); }
+  drawRoad(c); for (const p of R.pots) drawPothole(c, p); for (const k of R.coins) drawCoin(c, k);
+  for (const v of vehicles) drawVehicle(c, v);
+  if (R.gapT > 0) { c.fillStyle = 'rgba(80,255,150,' + (0.1 + Math.sin(G.clock * 8) * 0.04).toFixed(3) + ')'; c.fillRect(ROAD_L, 0, ROAD_R - ROAD_L, H); }
+  drawPlayer(c); drawDust(c); drawParticles(c); drawRain(c); drawBubbles(c);
+  c.restore();
+}
+
+// ====== রান শেষ / গেম-ওভার ======
+function endRun() {
+  const raw = Math.floor(R.scoreF), prev = save.best, newRecord = raw > prev, bonus = (newRecord && prev > 0) ? 100 : 0, score = raw + bonus;
+  const dist = Math.floor(R.dist), time = Math.floor(R.t);
+  save.runs++; save.totalNear += R.near; save.totalBells += R.bells; save.totalAvoided += R.avoided; save.totalTime += time;
+  if (score > save.best) save.best = score; if (dist > save.bestDist) save.bestDist = dist;
+  const rk = rankFor(score);
+  let pool;
+  if (newRecord) pool = LINES.highScore;
+  else { pool = LINES.overGeneric.slice(); const t = LINES.overType[R.collider]; if (t) pool = pool.concat(t, t); if (raw < 400) pool = pool.concat(LINES.overLow, LINES.overLow); }
+  const punch = pickLine(pool);
+  unlock('firstRide'); if (save.runs >= 10) unlock('runs10'); if (newRecord) unlock('personalBest'); if (prev > 0 && raw >= prev * 1.2) unlock('comebackKing');
+  checkAch(); persist();
+  lastResult = { score, dist, time, near: R.near, rankName: rk.name, rankIdx: rk.idx, punch, newRecord, prevBest: prev, bonus, avoided: R.avoided };
+  cardBlob = null;
+  $('oPunch').textContent = punch;
+  $('oRank').textContent = 'র‍্যাঙ্ক: ' + rk.name + ' (' + bn(rk.idx + 1) + '/' + bn(RANKS.length) + ')';
+  $('oScore').textContent = bn(score); $('oDist').textContent = bn(dist) + ' মি'; $('oTime').textContent = fmtTime(time); $('oNear').textContent = bn(R.near);
+  $('oBadge').hidden = !newRecord;
+  $('oPrev').textContent = (prev > 0 ? 'আগের সেরা: ' + bn(prev) : 'এটা তোর প্রথম রেকর্ড!') + (bonus ? ' · রেকর্ড বোনাস +' + bn(bonus) : '') + (newRecord ? ' · নতুন রেকর্ড ✅' : ' · রেকর্ড ভাঙা হয়নি');
+  shareMsg(''); E.manual.hidden = true;
+  setMode('over');
+  if (newRecord) { SFX.fanfare(); addParticles(30, 180, 200, { type: 'conf', s0: 5, s1: 9, g: 160 }); } else SFX.fail();
+  refreshMenu();
+}
+function shareMsg(t) { $('shareMsg').textContent = t; }
+
+// ====== ১০৮০×১৩৫০ মিম কার্ড ======
+const cf = (s, w) => (w || '800') + ' ' + s + 'px ' + FONT;
+function fitFont(g, text, maxW, start, min, w) { let s = start; g.font = cf(s, w); while (s > min && g.measureText(text).width > maxW) { s -= 2; g.font = cf(s, w); } return s; }
+function outlined(g, text, x, y, fill, stroke, lw) { g.lineJoin = 'round'; g.lineWidth = lw; g.strokeStyle = stroke; g.strokeText(text, x, y); g.fillStyle = fill; g.fillText(text, x, y); }
+function mkVeh(type, col) { return { type, x: 0, y: 0, w: VT[type].w, h: VT[type].h, col, blink: 0, blinkDir: 0, brake: 0, sign: 'গুলিস্তান', pal: 1, phase: 1.3 }; }
+function drawCard(g, r) {
+  const CW = 1080, CH = 1350;
+  let gr = g.createLinearGradient(0, 0, 0, CH); gr.addColorStop(0, '#ff9f1c'); gr.addColorStop(0.5, '#ef476f'); gr.addColorStop(1, '#5f0f40'); g.fillStyle = gr; g.fillRect(0, 0, CW, CH);
+  g.save(); g.translate(540, 640); for (let i = 0; i < 28; i++) { g.rotate(Math.PI * 2 / 28); if (i % 2) { g.fillStyle = 'rgba(255,255,255,.09)'; g.beginPath(); g.moveTo(0, 0); g.lineTo(1500, -95); g.lineTo(1500, 95); g.fill(); } } g.restore();
+  g.fillStyle = 'rgba(0,0,0,.14)'; for (let y = 880; y < CH; y += 34) for (let x = (y / 34) % 2 ? 17 : 0; x < CW; x += 34) { g.beginPath(); g.arc(x, y, (y - 860) / 490 * 8, 0, 7); g.fill(); }
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  // শিরোনাম
+  rr(g, 40, 28, 1000, 202, 34); g.fillStyle = '#15161a'; g.fill(); g.lineWidth = 8; g.strokeStyle = '#ffb703'; g.stroke();
+  fitFont(g, 'ঢাকা ট্রাফিক সারভাইভাল', 900, 100, 50, '900'); outlined(g, 'ঢাকা ট্রাফিক সারভাইভাল', 540, 98, '#ffb703', '#e63946', 10); g.fillStyle = '#ffb703'; g.fillText('ঢাকা ট্রাফিক সারভাইভাল', 540, 98);
+  g.font = cf(42, '800'); g.fillStyle = '#fff6e0'; g.fillText('DHAKA TRAFFIC SURVIVAL', 540, 162);
+  fitFont(g, '“ঢাকার রাস্তায় বাঁচলে তুই কিংবদন্তি!”', 900, 30, 20, '700'); g.fillStyle = '#2ec4f1'; g.fillText('“ঢাকার রাস্তায় বাঁচলে তুই কিংবদন্তি!”', 540, 204);
+  // দৃশ্য
+  g.save(); rr(g, 50, 252, 980, 556, 40); g.clip();
+  g.fillStyle = '#3a3d45'; g.fillRect(50, 252, 980, 556);
+  g.fillStyle = 'rgba(255,255,255,.04)'; for (let i = 0; i < 160; i++) g.fillRect(50 + (i * 97) % 980, 252 + (i * 61) % 556, 4, 4);
+  g.strokeStyle = 'rgba(255,255,255,.85)'; g.lineWidth = 8; g.setLineDash([]); g.beginPath(); g.moveTo(74, 252); g.lineTo(74, 808); g.moveTo(1006, 252); g.lineTo(1006, 808); g.stroke();
+  g.setLineDash([70, 55]); g.beginPath(); g.moveTo(295, 252); g.lineTo(295, 808); g.moveTo(785, 252); g.lineTo(785, 808); g.stroke();
+  g.setLineDash([]); g.strokeStyle = '#ffc83d'; g.beginPath(); g.moveTo(534, 252); g.lineTo(534, 808); g.moveTo(546, 252); g.lineTo(546, 808); g.stroke();
+  g.fillStyle = 'rgba(255,214,90,.28)'; star(g, 540, 540, 340, 240, 14, 0.2); g.fill();
+  g.strokeStyle = 'rgba(255,255,255,.35)'; g.lineWidth = 6; g.lineCap = 'round';
+  [[130, 300, 120], [215, 440, 90], [350, 330, 110], [455, 470, 80], [640, 320, 100], [700, 520, 120], [830, 300, 90], [970, 520, 100], [100, 700, 90], [990, 360, 110]].forEach(l => { g.beginPath(); g.moveTo(l[0], l[1]); g.lineTo(l[0], l[1] + l[2]); g.stroke(); });
+  const place = (v, x, y, s) => { g.save(); g.translate(x, y); g.scale(s, s); drawVehicle(g, v); g.restore(); };
+  place(mkVeh('bus', '#f4a300'), 175, 560, 3); place(mkVeh('car', '#3a86ff'), 335, 640, 3.1); place(mkVeh('moto', '#e63946'), 735, 470, 4); place(mkVeh('cng', '#2e9e5b'), 905, 650, 3.3);
+  drawRickshaw(g, { x: 540, y: 572, scale: 5.6, rider: 'player', pal: 0, pedal: 0.9, wheelPh: 14, lean: -0.05, mood: r.newRecord ? 'win' : 'shock', passenger: true });
+  g.restore(); g.lineWidth = 8; g.strokeStyle = '#15161a'; rr(g, 50, 252, 980, 556, 40); g.stroke();
+  // পাঞ্চলাইন বাবল
+  g.font = cf(40, '800'); let fs = 40, lines;
+  for (; fs >= 24; fs -= 2) { g.font = cf(fs, '800'); lines = wrapText(g, r.punch, 380); if (lines.length * fs * 1.28 <= 190) break; }
+  const bh = lines.length * fs * 1.28 + 36, by = 276;
+  rr(g, 66, by, 440, bh, 28); g.fillStyle = '#fff'; g.fill(); g.lineWidth = 6; g.strokeStyle = '#000'; g.stroke();
+  g.beginPath(); g.moveTo(504, by + bh - 50); g.lineTo(552, 440); g.lineTo(504, by + bh - 14); g.closePath(); g.fillStyle = '#fff'; g.fill(); g.stroke();
+  g.fillStyle = '#fff'; g.fillRect(500, by + bh - 52, 8, 40);
+  g.fillStyle = '#15161a'; lines.forEach((l, i) => g.fillText(l, 286, by + 18 + fs * 0.64 + i * fs * 1.28 + 4));
+  g.save(); g.translate(900, 345); g.rotate(0.14); g.fillStyle = r.newRecord ? '#06d6a0' : '#e63946'; star(g, 0, 0, 120, 78, 12, 0); g.fill(); g.lineWidth = 6; g.strokeStyle = '#000'; g.stroke();
+  const burst = r.newRecord ? 'নতুন রেকর্ড!' : 'ধড়াম!'; fitFont(g, burst, 170, 46, 28, '900'); outlined(g, burst, 0, 0, '#fff', '#000', 8); g.fillStyle = '#fff'; g.fillText(burst, 0, 0); g.restore();
+  // স্কোর
+  g.fillStyle = 'rgba(255,255,255,.14)'; star(g, 540, 940, 500, 400, 18, 0); g.fill();
+  g.font = cf(44, '800'); g.fillStyle = '#fff'; g.fillText('আমার স্কোর', 540, 840);
+  const sc = bn(r.score); fitFont(g, sc, 880, 200, 90, '900'); outlined(g, sc, 540, 940, '#ffb703', '#000', 16); g.fillStyle = '#ffb703'; g.fillText(sc, 540, 940);
+  rr(g, 90, 1022, 900, 78, 39); g.fillStyle = '#ffb703'; g.fill(); g.lineWidth = 6; g.strokeStyle = '#000'; g.stroke();
+  const rt = 'র‍্যাঙ্ক: ' + r.rankName; fitFont(g, rt, 820, 52, 28, '900'); g.fillStyle = '#15161a'; g.fillText(rt, 540, 1062);
+  // পরিসংখ্যান
+  const tiles = [['দূরত্ব', bn(r.dist) + ' মি'], ['সময়', fmtTime(r.time)], ['নিয়ার-মিস', bn(r.near)]];
+  tiles.forEach((t, i) => { const x = 60 + i * 330; rr(g, x, 1116, 300, 100, 24); g.fillStyle = 'rgba(21,22,26,.9)'; g.fill(); g.lineWidth = 4; g.strokeStyle = '#ffb703'; g.stroke(); g.font = cf(28, '700'); g.fillStyle = '#bbb'; g.fillText(t[0], x + 150, 1116 + 28); fitFont(g, t[1], 270, 50, 28, '900'); g.fillStyle = '#fff'; g.fillText(t[1], x + 150, 1116 + 70); });
+  // ব্যাজ ও ক্রেডিট
+  rr(g, 60, 1230, 960, 54, 27); g.fillStyle = '#0a8f5b'; g.fill(); g.lineWidth = 5; g.strokeStyle = '#000'; g.stroke();
+  const badge = 'আমি ঢাকার ট্রাফিকে বেঁচে ফিরেছি!'; fitFont(g, badge, 900, 38, 22, '900'); g.fillStyle = '#fff'; g.fillText(badge, 540, 1258);
+  g.font = cf(26, '800'); g.fillStyle = '#fff'; g.fillText('Developed by ' + DEV_NAME, 540, 1308);
+  fitFont(g, DEV_URL, 940, 22, 14, '700'); g.fillStyle = '#ffe8b0'; g.fillText(DEV_URL, 540, 1333);
+}
+function canvasToBlob(c) {
+  return new Promise((res, rej) => {
+    try {
+      if (c.toBlob) c.toBlob(b => b ? res(b) : rej(new Error('toBlob null')), 'image/png');
+      else { const d = c.toDataURL('image/png'); const bin = atob(d.split(',')[1]); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); res(new Blob([u], { type: 'image/png' })); }
+    } catch (e) { rej(e); }
+  });
+}
+async function getCardBlob() {
+  if (!lastResult) throw new Error('no result'); if (cardBlob) return cardBlob;
+  const c = document.createElement('canvas'); c.width = 1080; c.height = 1350;
+  const g = c.getContext('2d'); if (!g) throw new Error('no 2d');
+  drawCard(g, lastResult); const b = await canvasToBlob(c);
+  if (!b || !b.size) throw new Error('empty png'); cardBlob = b; return b;
+}
+const FILE_NAME = 'dhaka-traffic-survival-result.png';
+let dlCap = null;
+async function downloadPng(quiet) {
+  if (!lastResult) return false; if (!quiet) shareMsg('⏳ ছবি তৈরি হচ্ছে…');
+  try {
+    const blob = await getCardBlob();
+    if (window.AndroidBridge && typeof window.AndroidBridge.savePng === 'function') {
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      window.AndroidBridge.savePng(dataUrl, FILE_NAME);
+      if (!quiet) shareMsg('📥 PNG সেভ করার অনুরোধ পাঠানো হয়েছে।');
+      return true;
+    }
+    if (dlCap) {
+      try { await dlCap.save({ filename: FILE_NAME, data: blob }); if (!quiet) shareMsg('✅ PNG তৈরি হয়েছে, সেভ করার অনুমতি দেওয়া হয়েছে। ডাউনলোড ফোল্ডার দেখ।'); return true; }
+      catch (e) { if (e && e.code === 'declined') { if (!quiet) shareMsg('ডাউনলোড বাতিল করা হয়েছে।'); return false; } shareMsg('❌ PNG সেভ করা যায়নি: ' + (e && e.message ? e.message : 'অজানা সমস্যা')); return false; }
+    }
+    const url = URL.createObjectURL(blob), a = document.createElement('a');
+    if (!('download' in a)) { window.open(url, '_blank'); if (!quiet) shareMsg('ছবি নতুন ট্যাবে খুলেছে — ছবিটি চেপে ধরে "Save image" দে।'); return true; }
+    a.href = url; a.download = FILE_NAME; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 30000);
+    if (!quiet) shareMsg('✅ PNG তৈরি হয়েছে, ডাউনলোড শুরু হয়েছে। না পেলে ব্রাউজারের ডাউনলোড ফোল্ডার/অনুমতি দেখ।'); return true;
+  } catch (e) { shareMsg('❌ PNG তৈরি বা ডাউনলোড করা যায়নি: ' + (e && e.message ? e.message : 'অজানা সমস্যা')); return false; }
+}
+const urlConfigured = () => typeof PUBLIC_GAME_URL === 'string' && /^https?:\/\/\S+$/i.test(PUBLIC_GAME_URL.trim());
+function challengeText() {
+  const r = lastResult;
+  return '😂 আমি ঢাকার ট্রাফিকে ' + bn(r.score) + ' পয়েন্ট করেছি!\n\nআমার র‍্যাঙ্ক: ' + r.rankName + '\n\nওই মামা, সাইড দে! 🚲🇧🇩\n\nতুই কি আমার রেকর্ড ভাঙতে পারবি?' + (urlConfigured() ? '\n' + PUBLIC_GAME_URL.trim() : '');
+}
+async function copyText(t) {
+  try { if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) { await navigator.clipboard.writeText(t); E.manual.hidden = true; return true; } } catch (e) { /* ফলব্যাক */ }
+  E.manual.hidden = false; E.manual.value = t;
+  try { E.manual.focus(); E.manual.select(); if (document.execCommand && document.execCommand('copy')) { E.manual.hidden = true; return true; } } catch (e) { /* ম্যানুয়াল */ }
+  return false;
+}
+async function copyScore() { if (!lastResult) return; const ok = await copyText(challengeText()); shareMsg(ok ? '✅ স্কোর কপি হয়েছে, এবার যেখানে ইচ্ছা পেস্ট কর।' : 'ব্রাউজার কপি করতে দিল না — নিচের বক্সের লেখা ম্যানুয়ালি কপি কর।'); }
+async function shareChallenge() {
+  if (!lastResult) return; const text = challengeText();
+  if (window.AndroidBridge && typeof window.AndroidBridge.sharePng === 'function') {
+    try {
+      shareMsg('⏳ শেয়ারের জন্য ছবি তৈরি হচ্ছে…');
+      const blob = await getCardBlob();
+      const dataUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      window.AndroidBridge.sharePng(dataUrl, text);
+      shareMsg('✅ শেয়ার মেনু খোলা হচ্ছে…');
+      return;
+    } catch (e) {
+      shareMsg('ছবি শেয়ার করা যায়নি; টেক্সট শেয়ার করার চেষ্টা করছি।');
+      try { window.AndroidBridge.shareText(text); return; } catch (_) {}
+    }
+  }
+  if (navigator.share) {
+    try {
+      shareMsg('⏳ শেয়ারের জন্য ছবি বানাচ্ছি…'); const blob = await getCardBlob();
+      const file = new File([blob], FILE_NAME, { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text, title: 'ঢাকা ট্রাফিক সারভাইভাল' }); shareMsg('✅ শেয়ার ডায়ালগ থেকে পাঠানো হয়েছে।'); return; }
+    } catch (e) { if (e && e.name === 'AbortError') { shareMsg('শেয়ার বাতিল করা হয়েছে।'); return; } }
+  }
+  const ok = await downloadPng(true), cp = await copyText(text);
+  shareMsg((ok ? '📥 তোর ব্রাউজার ছবি-সহ শেয়ার সাপোর্ট করে না, তাই PNG ডাউনলোড শুরু হয়েছে — Facebook-এ নিজে আপলোড কর। ' : '❌ ছবি বানানো যায়নি। ') + (cp ? 'চ্যালেঞ্জ মেসেজ কপি হয়েছে।' : 'নিচের বক্সের মেসেজ কপি কর।'));
+}
+async function shareFacebook() {
+  if (!lastResult) return; const text = challengeText(), cp = await copyText(text);
+  if (!urlConfigured()) { shareMsg('⚠️ গেমটি এখনো পাবলিক URL-এ হোস্ট করা হয়নি, তাই Facebook লিংক-শেয়ার চালানো যাচ্ছে না। কোডে PUBLIC_GAME_URL সেট কর। আপাতত ' + (cp ? 'চ্যালেঞ্জ মেসেজ কপি হয়েছে।' : 'নিচের বক্সের মেসেজ কপি কর।')); return; }
+  const a = document.createElement('a'); a.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(PUBLIC_GAME_URL.trim()); a.target = '_blank'; a.rel = 'noopener noreferrer'; document.body.appendChild(a); a.click(); a.remove();
+  shareMsg('Facebook শেয়ার ডায়ালগ খোলার চেষ্টা করা হয়েছে (পপআপ ব্লক থাকলে অনুমতি দে)। মনে রাখিস: এই ডায়ালগ PNG আপলোড করে না — "মিম কার্ড ডাউনলোড" করে নিজে পোস্টে যোগ কর।' + (cp ? ' চ্যালেঞ্জ মেসেজও কপি হয়েছে।' : ''));
+}
+
+// ====== ফ্লো ======
+function refreshMenu() { $('mBest').textContent = 'সেরা স্কোর: ' + bn(save.best); }
+function refreshAudioBtns() {
+  document.querySelectorAll('.js-snd').forEach(b => { b.textContent = b.classList.contains('ico') ? (save.sound ? '🔊' : '🔇') : (save.sound ? '🔊 সাউন্ড' : '🔇 সাউন্ড বন্ধ'); b.classList.toggle('off', !save.sound); b.setAttribute('aria-pressed', String(save.sound)); });
+  document.querySelectorAll('.js-mus').forEach(b => { b.textContent = b.classList.contains('ico') ? '🎵' : (save.music ? '🎵 মিউজিক' : '🎵 মিউজিক বন্ধ'); b.classList.toggle('off', !save.music); b.setAttribute('aria-pressed', String(save.music)); });
+}
+function toggleSound() { SFX.init(); save.sound = !save.sound; persist(); SFX.apply(); refreshAudioBtns(); if (!save.sound) SFX.stopMusic(); else if (G.mode === 'play' && save.music) SFX.startMusic(); }
+function toggleMusic() { SFX.init(); save.music = !save.music; persist(); SFX.apply(); refreshAudioBtns(); if (!save.music) SFX.stopMusic(); else if (G.mode === 'play' && save.sound) SFX.startMusic(); }
+function startGame() {
+  SFX.init(); if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  const returning = save.runs > 0;
+  newRun(); vehicles.length = 0; particles.length = 0; bubbles.length = 0; ripples.length = 0;
+  P.x = 180; P.vx = 0; P.lean = 0; P.bellT = P.shoutT = P.winT = 0; prefillSide(); G.scroll = 185; G.diff = 0; G.shake = 0; G.slowT = 0; G.timeScale = 1; G.commentT = 9; G.lastBellAt = 0; G.lastDoubleAt = -99999; G.statsOpen = false;
+  lastResult = null; cardBlob = null; Object.keys(hudCache).forEach(k => delete hudCache[k]);
+  setMode('play'); updateHud();
+  const l = returning ? pickLine(LINES.comeback) : 'ঢাকার রাস্তায় তোর সাহসের পরীক্ষা শুরু!';
+  addBubble(l, P.x, P.y - 30, { fo: P, dy: -34, life: 2.4 }); setStatus(l, 3);
+  if (save.music && save.sound) SFX.startMusic();
+}
+function pauseGame() { if (G.mode !== 'play') return; ui.left = ui.right = false; keys.left = keys.right = false; drag.active = false; setMode('pause'); SFX.stopMusic(); }
+function resumeGame() { if (G.mode !== 'pause') return; setMode('play'); if (save.music && save.sound) SFX.startMusic(); }
+function goMenu() { SFX.stopMusic(); G.statsOpen = false; newRun(); vehicles.length = 0; particles.length = 0; bubbles.length = 0; ripples.length = 0; prefillSide(); E.status.classList.remove('on'); setMode('menu'); refreshMenu(); }
+function buildStats() {
+  const sl = $('statList'); sl.textContent = '';
+  [['মোট রান', bn(save.runs)], ['সেরা স্কোর', bn(save.best)], ['সেরা দূরত্ব', bn(save.bestDist) + ' মি'], ['মোট নিয়ার-মিস', bn(save.totalNear)], ['মোট বেল', bn(save.totalBells)], ['এড়ানো গাড়ি', bn(save.totalAvoided)], ['মোট সময়', fmtTime(save.totalTime)], ['অর্জন', bn(Object.keys(save.ach).length) + '/' + bn(ACH.length)]].forEach(s => { const d = document.createElement('div'); d.appendChild(document.createTextNode(s[0])); const b = document.createElement('b'); b.textContent = s[1]; d.appendChild(b); sl.appendChild(d); });
+  const al = $('achList'); al.textContent = '';
+  ACH.forEach(a => { const d = document.createElement('div'); d.className = 'ach' + (save.ach[a[0]] ? '' : ' locked'); const i = document.createElement('i'); i.textContent = a[1]; const t = document.createElement('div'); const b = document.createElement('b'); b.textContent = a[2]; t.appendChild(b); t.appendChild(document.createTextNode(a[3])); d.appendChild(i); d.appendChild(t); al.appendChild(d); });
+  if (!storageOk) { const n = document.createElement('p'); n.className = 'msg'; n.textContent = '⚠️ এই ব্রাউজারে সেভ করা যাচ্ছে না — প্রগ্রেস শুধু এই সেশনে থাকবে।'; al.appendChild(n); }
+}
+function openStats() { buildStats(); G.statsOpen = true; setMode('menu'); }
+function closeStats() { G.statsOpen = false; setMode('menu'); }
+
+// ====== ইনপুট ও বাইন্ডিং ======
+function holdBtn(el, key) {
+  const up = () => { ui[key] = false; el.classList.remove('down'); };
+  el.addEventListener('pointerdown', e => { e.preventDefault(); ui[key] = true; el.classList.add('down'); try { el.setPointerCapture(e.pointerId); } catch (_) { /* ঠিক আছে */ } });
+  el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up); el.addEventListener('lostpointercapture', up); el.addEventListener('contextmenu', e => e.preventDefault());
+}
+function bindUI() {
+  holdBtn($('btnLeft'), 'left'); holdBtn($('btnRight'), 'right');
+  const bb = $('btnBell');
+  bb.addEventListener('pointerdown', e => { e.preventDefault(); bb.classList.add('down'); ringBell(); });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(n => bb.addEventListener(n, () => bb.classList.remove('down')));
+  bb.addEventListener('contextmenu', e => e.preventDefault());
+  const wx = e => { const r = cv.getBoundingClientRect(); return (e.clientX - r.left) / r.width * W; };
+  cv.addEventListener('pointerdown', e => { if (G.mode !== 'play') return; drag.active = true; drag.x = wx(e); try { cv.setPointerCapture(e.pointerId); } catch (_) { /* ঠিক আছে */ } e.preventDefault(); });
+  cv.addEventListener('pointermove', e => { if (drag.active) drag.x = wx(e); });
+  ['pointerup', 'pointercancel'].forEach(n => cv.addEventListener(n, () => { drag.active = false; }));
+  stage.addEventListener('contextmenu', e => e.preventDefault());
+  $('btnStart').addEventListener('click', startGame); $('btnAgain').addEventListener('click', startGame); $('btnRestartP').addEventListener('click', startGame);
+  $('btnResume').addEventListener('click', resumeGame); $('btnPause').addEventListener('click', pauseGame);
+  $('btnHomeP').addEventListener('click', goMenu); $('btnHomeO').addEventListener('click', goMenu);
+  $('btnStats').addEventListener('click', openStats); $('btnStatsBack').addEventListener('click', closeStats);
+  document.querySelectorAll('.js-snd').forEach(b => b.addEventListener('click', toggleSound));
+  document.querySelectorAll('.js-mus').forEach(b => b.addEventListener('click', toggleMusic));
+  $('btnPng').addEventListener('click', () => downloadPng()); $('btnPng2').addEventListener('click', () => downloadPng());
+  $('btnFb').addEventListener('click', shareFacebook); $('btnChallenge').addEventListener('click', shareChallenge); $('btnCopy').addEventListener('click', copyScore);
+  window.addEventListener('keydown', e => {
+    const k = e.key;
+    if (k === 'ArrowLeft' || k === 'a' || k === 'A') { keys.left = true; if (G.mode === 'play') e.preventDefault(); }
+    else if (k === 'ArrowRight' || k === 'd' || k === 'D') { keys.right = true; if (G.mode === 'play') e.preventDefault(); }
+    else if (k === ' ' || e.code === 'Space') { if (G.mode === 'play') { e.preventDefault(); if (!e.repeat) ringBell(); } }
+    else if (k === 'Escape' || k === 'p' || k === 'P') { if (G.mode === 'play') pauseGame(); else if (G.mode === 'pause') resumeGame(); else if (G.statsOpen) closeStats(); }
+    else if (k === 'Enter') {
+      const ae = document.activeElement; if (ae && (ae.tagName === 'BUTTON' || ae.tagName === 'A' || ae.tagName === 'TEXTAREA')) return;
+      if (G.mode === 'menu' && !G.statsOpen) startGame(); else if (G.mode === 'over') startGame(); else if (G.mode === 'pause') resumeGame();
+    }
+  });
+  window.addEventListener('keyup', e => { const k = e.key; if (k === 'ArrowLeft' || k === 'a' || k === 'A') keys.left = false; if (k === 'ArrowRight' || k === 'd' || k === 'D') keys.right = false; });
+  window.addEventListener('blur', () => { keys.left = keys.right = false; ui.left = ui.right = false; pauseGame(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseGame(); });
+  window.addEventListener('resize', resize); window.addEventListener('orientationchange', resize);
+}
+let lastTs = 0;
+function frame(ts) {
+  requestAnimationFrame(frame);
+  if (!lastTs) lastTs = ts; let dt = (ts - lastTs) / 1000; lastTs = ts; if (!(dt > 0)) dt = 0; dt = Math.min(dt, 0.05);
+  try { update(dt); render(); } catch (err) { console.error(err); }
+}
+function init() {
+  loadSave();
+  ['hScore', 'hBest', 'hDist', 'hTime', 'hNear', 'hCombo', 'hMult', 'status', 'toast'].forEach(id => { E[id] = $(id); });
+  E.manual = $('manualCopy');
+  resize(); newRun(); prefillSide(); refreshMenu(); refreshAudioBtns(); bindUI(); setMode('menu');
+  requestAnimationFrame(frame);
+  try { if (window.claude && window.claude.use) window.claude.use('downloads').then(d => { dlCap = d || null; }, () => { dlCap = null; }); } catch (e) { dlCap = null; }
+}
+init();
+})();
+</script>
+</body>
+</html>
